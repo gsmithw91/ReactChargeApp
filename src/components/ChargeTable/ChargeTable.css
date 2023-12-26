@@ -1,0 +1,16 @@
+.charge-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.charge-table th,
+.charge-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.charge-table th {
+  background-color: #f2f2f2;
+}

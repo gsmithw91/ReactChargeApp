@@ -1,0 +1,14 @@
+.systems-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.systems-list button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.system-details {
+  margin-left: 20px;
+}

@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import SystemList from "./components/SystemList/SystemList";
+import LocationList from "./components/LocationList/LocationList";
+import ChargeTable from "./components/ChargeTable/ChargeTable";
 
 function App() {
+  const [selectedSystem, setSelectedSystem] = useState({
+    id: null,
+    color: null,
+  });
+
+  const [selectedLocation, setSelectedLocation] = useState(null);
+
+  const handleSystemSelect = (systemId, systemColor) => {
+    setSelectedSystem({ id: systemId, color: systemColor });
+  };
+
+  const handleLocationSelect = (locationId) => {
+    setSelectedLocation(locationId); // Update selectedLocation
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hospital Systems</h1>
+      <SystemList onSystemSelect={handleSystemSelect} />
+      <LocationList
+        selectedSystem={selectedSystem}
+        onLocationSelect={handleLocationSelect}
+      />{" "}
+      {/* Pass onLocationSelect */}
+      <ChargeTable
+        systemId={selectedSystem.id}
+        locationId={selectedLocation}
+      />{" "}
+      {/* Pass selectedLocation */}
     </div>
   );
 }
