@@ -26,13 +26,26 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
           setLoading(false);
 
           if (response.data.length > 0) {
-            const columns = Object.keys(response.data[0]).filter(
-              (col) => col !== "SystemID" && col !== "LocationID"
-            );
+            const columns = Object.keys(response.data[0])
+              .filter(
+                (col) =>
+                  ![
+                    "SystemID",
+                    "LocationID",
+                    "ServiceDescription",
+                    "BillingCode",
+                    "LocationName",
+                  ].includes(col)
+              )
+              .sort(); // Sort the remaining columns alphabetically
+
             setOriginalColumnOrder([
+              "LocationName",
               "ServiceDescription",
               "BillingCode",
-              ...columns,
+              "GrossCharge",
+              "DiscountedCashPrice",
+              ...columns, // Append the sorted columns
             ]);
           }
         })
@@ -45,7 +58,7 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
 
   const handleAddToChargeSheet = (charge) => {
     setSelectedRows((prevSelectedRows) => {
-      if (!prevSelectedRows.includes(charge)) {
+      if (!prevSelectedRows.find((row) => row.ChargeID === charge.ChargeID)) {
         return [...prevSelectedRows, charge];
       } else {
         return prevSelectedRows;
@@ -108,8 +121,8 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
                       <th>Action</th>
                       {originalColumnOrder.map((column, index) => (
                         <Draggable
-                          key={`column-${column}`} // Ensure a unique key
-                          draggableId={`column-${column}`} // Ensure a unique key
+                          key={`column-${column}-${index}`} // Unique key combining column name and index
+                          draggableId={`column-${column}-${index}`} // Unique draggableId
                           index={index}
                         >
                           {(provided) => (
@@ -127,7 +140,7 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
                   </thead>
                   <tbody>
                     {currentCharges.map((charge, rowIndex) => (
-                      <tr key={`row-${rowIndex}`}>
+                      <tr key={`charge-${charge.ChargeID || rowIndex}`}>
                         <td>
                           <button
                             onClick={() => handleAddToChargeSheet(charge)}
@@ -137,9 +150,9 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
                         </td>
                         {originalColumnOrder.map((column, columnIndex) => (
                           <td
-                            key={`row-${rowIndex}-${column}-${
-                              charge.id || rowIndex
-                            }`}
+                            key={`charge-${
+                              charge.ChargeID || rowIndex
+                            }-${column}-${columnIndex}`}
                           >
                             {charge[column]}
                           </td>

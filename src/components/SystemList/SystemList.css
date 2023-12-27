@@ -1,41 +1,37 @@
-/* Container for the entire system list */
-.systems-container {
+/* SystemList.css */
+
+/* Container for the list of systems */
+.systems-list {
   display: flex;
-  justify-content: space-between; /* Space out child elements */
-  padding: 20px; /* Add some padding around the container */
+  flex-wrap: wrap; /* Wrap items if they don't fit in a single line */
+  margin: 20px; /* Add some margin around the container */
+  padding: 10px; /* Padding inside the container */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px; /* Rounded corners for the container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* Styling for buttons within the system list */
+/* Styling for system buttons */
 .systems-list button {
-  margin: 5px; /* Space around buttons */
-  padding: 10px; /* Padding inside buttons */
+  margin: 5px; /* Space between buttons */
+  padding: 10px 15px; /* Padding inside buttons */
   cursor: pointer; /* Pointer cursor on hover */
   border: 1px solid #ccc; /* Border color */
-  background-color: #f8f8f8; /* Button background color */
-  border-radius: 4px; /* Rounded corners */
-  transition: background-color 0.3s; /* Transition for hover effect */
+  border-radius: 4px; /* Rounded corners for buttons */
+  transition: all 0.3s ease; /* Smooth transition for color and background */
+  color: white; /* Text color for buttons */
+  font-size: 1.2em; /* Font size for buttons */
+  font-weight: 500;
 }
 
 /* Hover effect for buttons */
 .systems-list button:hover {
-  background-color: #e2e2e2; /* Change background color on hover */
+  background-color: #007bff; /* Change background color on hover */
+  color: #fff; /* Text color on hover */
 }
 
-/* Additional details for each system, if applicable */
-.system-details {
-  margin-left: 20px; /* Space from the left */
-  padding: 10px; /* Padding inside the details container */
-  border-left: 2px solid #007bff; /* Left border for emphasis */
-}
-
-/* Add responsive adjustments if necessary */
-@media (max-width: 768px) {
-  .systems-container {
-    flex-direction: column; /* Stack elements vertically on smaller screens */
-  }
-
-  .system-details {
-    margin-left: 0; /* Remove left margin on smaller screens */
-    margin-top: 10px; /* Add top margin for spacing */
-  }
+/* Loading text style */
+.systems-list p {
+  color: #666; /* Color for the loading text */
+  text-align: center; /* Center the loading text */
 }

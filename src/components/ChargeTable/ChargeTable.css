@@ -1,89 +1,58 @@
+/* ChargeTable.css */
+
+/* Container for the charge table */
 .charge-table {
-  font-family: "Arial", sans-serif;
-  margin: 20px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px; /* Consistent margin with other lists */
+  padding: 10px; /* Padding inside the container */
+  background-color: #f9f9f9; /* Light background color for consistency */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow-x: auto; /* Allows scrolling for wide tables */
 }
 
-.charge-table h2 {
-  text-align: center;
-  color: #333;
-}
-
+/* Styling for the charge table */
 .charge-table table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+  width: 100%; /* Full width of the container */
+  border-collapse: collapse; /* Collapses border for a clean look */
 }
 
-.charge-table th,
-.charge-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
+/* Table headers */
 .charge-table th {
-  background-color: #f2f2f2;
-  color: #333;
+  background-color: #007bff; /* Consistent header color */
+  color: white; /* Text color for contrast */
+  padding: 10px; /* Padding for table headers */
+  text-align: left; /* Align text to the left */
+  border: 1px solid #ccc; /* Consistent border color */
 }
 
+/* Table data cells */
+.charge-table td {
+  padding: 10px; /* Padding for table data */
+  border: 1px solid #ccc; /* Border for cells */
+  text-align: left; /* Align text to the left */
+}
+
+/* Styling for rows */
 .charge-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #f2f2f2; /* Zebra striping for rows */
 }
 
+/* Hover effect for rows */
 .charge-table tr:hover {
-  background-color: #e7f4ff;
+  background-color: #ddd; /* Color change on hover */
 }
 
-.charge-table input[type="text"] {
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 100%;
-}
-
+/* Button style inside the table */
 .charge-table button {
-  padding: 10px 15px;
-  margin-right: 5px;
-  margin-top: 10px;
-  background-color: #5c85d6;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 5px 10px; /* Padding for buttons */
+  border-radius: 4px; /* Rounded corners for buttons */
+  border: none; /* No border for cleaner look */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
+/* Hover effect for buttons */
 .charge-table button:hover {
-  background-color: #4d72aa;
-}
-
-/* Pagination container */
-.charge-table .pagination {
-  text-align: center;
-  padding: 20px;
-}
-
-/* Active button styling */
-.charge-table .pagination button.active {
-  background-color: #4caf50;
-}
-
-/* Adjust the button styles for the "Add to ChargeSheet" action */
-.charge-table .add-to-sheet-btn {
-  background-color: #f0ad4e;
+  background-color: #0056b3; /* Darker shade on hover */
   color: white;
-}
-
-.charge-table .add-to-sheet-btn:hover {
-  background-color: #ec971f;
-}
-
-/* Responsive adjustments can be placed here */
-@media (max-width: 768px) {
-  /* Responsive styling */
 }
