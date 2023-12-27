@@ -1,14 +1,41 @@
+/* Container for the entire system list */
 .systems-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space out child elements */
+  padding: 20px; /* Add some padding around the container */
 }
 
+/* Styling for buttons within the system list */
 .systems-list button {
-  margin: 5px;
-  padding: 10px;
-  cursor: pointer;
+  margin: 5px; /* Space around buttons */
+  padding: 10px; /* Padding inside buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  border: 1px solid #ccc; /* Border color */
+  background-color: #f8f8f8; /* Button background color */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s; /* Transition for hover effect */
 }
 
+/* Hover effect for buttons */
+.systems-list button:hover {
+  background-color: #e2e2e2; /* Change background color on hover */
+}
+
+/* Additional details for each system, if applicable */
 .system-details {
-  margin-left: 20px;
+  margin-left: 20px; /* Space from the left */
+  padding: 10px; /* Padding inside the details container */
+  border-left: 2px solid #007bff; /* Left border for emphasis */
+}
+
+/* Add responsive adjustments if necessary */
+@media (max-width: 768px) {
+  .systems-container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+  }
+
+  .system-details {
+    margin-left: 0; /* Remove left margin on smaller screens */
+    margin-top: 10px; /* Add top margin for spacing */
+  }
 }

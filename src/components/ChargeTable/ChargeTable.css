@@ -1,4 +1,18 @@
 .charge-table {
+  font-family: "Arial", sans-serif;
+  margin: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.charge-table h2 {
+  text-align: center;
+  color: #333;
+}
+
+.charge-table table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -13,4 +27,63 @@
 
 .charge-table th {
   background-color: #f2f2f2;
+  color: #333;
+}
+
+.charge-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.charge-table tr:hover {
+  background-color: #e7f4ff;
+}
+
+.charge-table input[type="text"] {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.charge-table button {
+  padding: 10px 15px;
+  margin-right: 5px;
+  margin-top: 10px;
+  background-color: #5c85d6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.charge-table button:hover {
+  background-color: #4d72aa;
+}
+
+/* Pagination container */
+.charge-table .pagination {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Active button styling */
+.charge-table .pagination button.active {
+  background-color: #4caf50;
+}
+
+/* Adjust the button styles for the "Add to ChargeSheet" action */
+.charge-table .add-to-sheet-btn {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.charge-table .add-to-sheet-btn:hover {
+  background-color: #ec971f;
+}
+
+/* Responsive adjustments can be placed here */
+@media (max-width: 768px) {
+  /* Responsive styling */
 }

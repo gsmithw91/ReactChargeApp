@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SystemList from "./components/SystemList/SystemList";
 import LocationList from "./components/LocationList/LocationList";
 import ChargeTable from "./components/ChargeTable/ChargeTable";
+import ChargeSheet from "./components/ChargeSheet/ChargeSheet";
 
 function App() {
   const [selectedSystem, setSelectedSystem] = useState({
@@ -18,6 +19,7 @@ function App() {
   const handleLocationSelect = (locationId) => {
     setSelectedLocation(locationId); // Update selectedLocation
   };
+  const [selectedRows, setSelectedRows] = useState([]);
 
   return (
     <div className="App">
@@ -31,8 +33,10 @@ function App() {
       <ChargeTable
         systemId={selectedSystem.id}
         locationId={selectedLocation}
+        setSelectedRows={setSelectedRows}
       />{" "}
       {/* Pass selectedLocation */}
+      <ChargeSheet selectedRows={selectedRows} />
     </div>
   );
 }
