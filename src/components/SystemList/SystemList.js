@@ -29,6 +29,8 @@ function SystemList({ onSystemSelect }) {
 
   return (
     <div className="systems-list">
+      <h2 className="systems-label">Hospital Systems</h2>{" "}
+      {/* Label for the list */}
       {systems.map((system) => (
         <button
           key={system.SystemID}

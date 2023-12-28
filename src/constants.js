@@ -15,3 +15,12 @@ export const ligtercolorMapping = {
   5: "#006937",
   6: "#800000",
 };
+
+export const systemMapping = {
+  1: "Advocate",
+  2: "Loyola",
+  3: "NorthShore",
+  4: "Northwestern",
+  5: "Rush",
+  6: "University of Chicago",
+};

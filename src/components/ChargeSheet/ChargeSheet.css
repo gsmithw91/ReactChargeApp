@@ -1,67 +1,56 @@
-/* ChargeSheet.css */
+.container {
+  display: flex;
+  justify-content: flex-start; /* Changed from 'start' to 'flex-start' */
+  align-items: flex-start; /* Ensure this is 'flex-start' for better support */
+  gap: 20px; /* Adds space between ChargeSheet and SummaryBox */
+}
 
-/* Container for the charge sheet */
 .charge-sheet {
-  margin: 20px;
-  padding: 10px;
-  background-color: #f9f9f9;
+  display: flex;
+  flex: 1; /* Allows ChargeSheet to grow to fit the container */
+  flex-direction: column; /* Stacks children vertically */
+  align-items: flex-start; /* Aligns children to the start of the cross axis, changed from 'center' */
+  padding: 20px; /* Padding inside the charge-sheet */
+}
+
+.charge-item-wrapper {
+  width: 70%;
+  margin-bottom: 10px; /* Spacing between items */
+}
+
+/* Add this to ensure the ul takes the full width */
+.charge-sheet ul {
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+
+/* Add some styling to the charge-item */
+.charge-item {
+  border: 1px solid #ccc;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Needed for absolute positioning of the color box */
 }
 
-/* Style for the header */
-.charge-sheet h2 {
-  color: #007bff;
-  text-align: center;
-  font-size: 1.2em;
+.charge-item p {
+  margin: 0; /* Removes default paragraph margin */
+  line-height: 1.5; /* Adjust line spacing */
+  text-align: left; /* Aligns text to the left */
 }
 
-/* Styling for the list of charges */
-.charge-sheet ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Style for each charge detail item wrapper */
-.charge-sheet li {
-  display: flex;
-  align-items: flex-start; /* Align to the top if items have different heights */
-  justify-content: space-between; /* Space between text and color box */
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative; /* For absolute positioning of the color box */
-}
-
-/* Styling for the charge details */
-.charge-details {
-  text-align: center;
-}
-
-/* Styling for the paragraphs in each item */
-.charge-sheet p {
-  margin: 5px 0; /* Add some space between paragraphs */
-  color: white; /* White color for paragraphs */
-  font-size: 1.1em; /* Bigger text size */
-  font-weight: bold; /* Bold text */
-}
-
-/* Style for the color box */
 .system-color-box {
-  width: 20px; /* Adjust size as needed */
-  height: 20px; /* Adjust size as needed */
-  border-radius: 50%; /* Circular shape */
-  position: absolute; /* Positioning relative to the parent li */
-  right: 10px; /* 10px from the right edge of the list item */
-  top: 10px; /* 10px from the top edge of the list item */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute; /* Positions the color box relative to the charge-item */
+  right: 15px; /* 15px from the right edge of charge-item */
+  top: 15px; /* 15px from the top edge of charge-item */
 }
 
-/* No charges selected message style */
-.charge-sheet p {
+/* Ensure that the header is full width */
+.charge-sheet > h2 {
+  width: 100%;
   text-align: center;
-  color: #636363;
 }

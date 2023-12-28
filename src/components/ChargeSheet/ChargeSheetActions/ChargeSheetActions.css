@@ -1,0 +1,27 @@
+.charge-sheet-actions {
+  display: flex;
+  justify-content: flex-end; /* Aligns buttons to the right */
+  width: 70%; /* Matches the width of the charge items */
+  padding: 10px 0; /* Gives some space above and below the actions */
+}
+
+/* Style the buttons */
+.charge-sheet-actions button {
+  margin-left: 10px; /* Spacing between buttons */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.charge-sheet-actions button:hover {
+  background-color: #0056b3;
+}
+
+.charge-sheet-actions p {
+  margin-left: 10px;
+  color: green; /* Feedback message color */
+}

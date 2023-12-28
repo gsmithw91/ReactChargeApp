@@ -8,7 +8,7 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
   const [isLoading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [rowsPerPage] = useState(10);
+  const [rowsPerPage] = useState(5);
   const [originalColumnOrder, setOriginalColumnOrder] = useState([
     "ServiceDescription",
     "BillingCode",

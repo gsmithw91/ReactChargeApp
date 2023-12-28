@@ -56,3 +56,12 @@
   background-color: #0056b3; /* Darker shade on hover */
   color: white;
 }
+
+.charge-table-search {
+  width: 100%; /* Makes the search box take the full width of its container */
+  padding: 10px; /* Adds more padding for better visual appeal */
+  margin-bottom: 10px; /* Adds some space below the search box */
+  font-size: 1em; /* Adjusts the font size */
+  border: 2px solid #ccc; /* Gives a more defined border */
+  border-radius: 4px; /* Adds rounded corners */
+}

@@ -3,6 +3,7 @@
 /* Container for the list of systems */
 .systems-list {
   display: flex;
+  flex-direction: column; /* Stack items vertically */
   flex-wrap: wrap; /* Wrap items if they don't fit in a single line */
   margin: 20px; /* Add some margin around the container */
   padding: 10px; /* Padding inside the container */
@@ -11,17 +12,25 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Label for the list of systems */
+.systems-label {
+  margin-bottom: 10px; /* Space below the label */
+  color: #333; /* Text color for the label */
+  font-size: 1.5em; /* Font size for the label */
+}
+
 /* Styling for system buttons */
 .systems-list button {
   margin: 5px; /* Space between buttons */
   padding: 10px 15px; /* Padding inside buttons */
   cursor: pointer; /* Pointer cursor on hover */
-  border: 1px solid #ccc; /* Border color */
+  border: none; /* No border for buttons */
   border-radius: 4px; /* Rounded corners for buttons */
   transition: all 0.3s ease; /* Smooth transition for color and background */
   color: white; /* Text color for buttons */
-  font-size: 1.2em; /* Font size for buttons */
-  font-weight: 500;
+  font-size: 1em; /* Font size for buttons */
+  font-weight: 500; /* Font weight for buttons */
+  flex: 1 1 auto; /* Buttons will grow and shrink as needed */
 }
 
 /* Hover effect for buttons */
