@@ -3,19 +3,19 @@ import axios from "axios";
 import "./ChargeTable.css";
 import Header from "./Header/Header";
 import Table from "./Table/Table";
-import ColumnSelector from "./ColumnSelector/ColumnSelector"; // Import the ColumnSelector component
+import ColumnSelector from "./ColumnSelector/ColumnSelector";
 
 function ChargeTable({ systemId, locationId, setSelectedRows }) {
   const [charges, setCharges] = useState([]);
   const [isLoading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(""); // Reverted to a string
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedColumns, setSelectedColumns] = useState([
     "ServiceDescription",
     "BillingCode",
     "GrossCharge",
     "DiscountedCashPrice",
-  ]); // State to manage selected columns
+  ]);
   const rowsPerPage = 5;
 
   useEffect(() => {
@@ -36,6 +36,10 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
     }
   }, [systemId, locationId]);
 
+  const handleSearchTermChange = (column, value) => {
+    setSearchTerm({ ...searchTerm, [column]: value });
+  };
+
   const handleAddToChargeSheet = (charge) => {
     setSelectedRows((prevSelectedRows) => {
       if (!prevSelectedRows.find((row) => row.ChargeID === charge.ChargeID)) {
@@ -50,8 +54,8 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
     ? charges.filter((charge) =>
         Object.values(charge).some(
           (value) =>
-            typeof value === "string" &&
-            value.toLowerCase().includes(searchTerm.toLowerCase())
+            value !== null &&
+            value.toString().toLowerCase().includes(searchTerm.toLowerCase())
         )
       )
     : charges;
@@ -65,7 +69,11 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
 
   return (
     <div className="charge-table">
-      <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Header
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        selectedColumns={selectedColumns} // This prop is not used in Header now
+      />
       <ColumnSelector
         systemId={systemId}
         selectedColumns={selectedColumns}
@@ -76,7 +84,7 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
       ) : (
         <Table
           charges={currentCharges}
-          columns={selectedColumns} // Use selectedColumns here
+          selectedColumns={selectedColumns}
           handleAddToChargeSheet={handleAddToChargeSheet}
         />
       )}

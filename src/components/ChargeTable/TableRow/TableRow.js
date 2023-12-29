@@ -1,40 +1,25 @@
-// TableRow.js
 import React from "react";
 
 function TableRow({
   charge,
-  initialColumns,
+  selectedColumns, // Use selectedColumns instead of initialColumns
   handleAddToChargeSheet,
   rowIndex,
 }) {
   return (
-    <tr key={`charge-${charge.ChargeID || rowIndex}`}>
+    <tr>
       <td>
         <button onClick={() => handleAddToChargeSheet(charge)}>
           Add to ChargeSheet
         </button>
       </td>
-      {initialColumns.map((column, columnIndex) => (
+      {selectedColumns.map((column, columnIndex) => (
         <td
           key={`charge-${charge.ChargeID || rowIndex}-${column}-${columnIndex}`}
         >
           {charge[column]}
         </td>
       ))}
-      {Object.keys(charge).map((column, columnIndex) => {
-        if (!initialColumns.includes(column)) {
-          return (
-            <td
-              key={`charge-${
-                charge.ChargeID || rowIndex
-              }-${column}-${columnIndex}`}
-            >
-              {charge[column]}
-            </td>
-          );
-        }
-        return null;
-      })}
     </tr>
   );
 }

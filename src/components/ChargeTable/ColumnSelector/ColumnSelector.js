@@ -1,46 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Select from "react-select"; // Import react-select
+import "./ColumnSelector.css";
 
 function ColumnSelector({ systemId, selectedColumns, setSelectedColumns }) {
-  const [availableColumns, setAvailableColumns] = React.useState([]);
+  const [availableColumns, setAvailableColumns] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (systemId) {
       axios
         .get(`http://127.0.0.1:5000/react/columns/${systemId}`)
         .then((response) => {
-          setAvailableColumns(response.data.columns);
-          // Optionally set all columns by default
-          // setSelectedColumns(response.data.columns);
+          const columns = response.data.columns.map((column) => ({
+            value: column,
+            label: column,
+          }));
+          setAvailableColumns(columns);
         })
         .catch((error) => console.error(`Error fetching columns: ${error}`));
     }
-  }, [systemId, setSelectedColumns]);
+  }, [systemId]);
 
-  const handleColumnChange = (column) => {
-    setSelectedColumns((prevSelectedColumns) => {
-      if (prevSelectedColumns.includes(column)) {
-        // If column is already selected, remove it
-        return prevSelectedColumns.filter((col) => col !== column);
-      } else {
-        // If column is not selected, add it
-        return [...prevSelectedColumns, column];
-      }
-    });
+  const handleChange = (selectedOptions) => {
+    // Transform selected options back into an array of column names
+    const selectedColumnNames = selectedOptions.map((option) => option.value);
+    setSelectedColumns(selectedColumnNames);
   };
+
+  // Transform selectedColumns for react-select
+  const selectedValues = selectedColumns.map((column) => ({
+    value: column,
+    label: column,
+  }));
 
   return (
     <div className="column-selector">
-      {availableColumns.map((column) => (
-        <div key={column}>
-          <input
-            type="checkbox"
-            checked={selectedColumns.includes(column)}
-            onChange={() => handleColumnChange(column)}
-          />
-          {column}
-        </div>
-      ))}
+      <Select
+        isMulti
+        name="columns"
+        options={availableColumns}
+        value={selectedValues}
+        onChange={handleChange}
+        className="column-selector-dropdown"
+      />
     </div>
   );
 }
