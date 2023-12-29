@@ -1,0 +1,17 @@
+/* Table rows */
+.table-container tr {
+  background-color: #ffffff; /* Set the default background color */
+  transition: background-color 0.3s ease; /* Add a transition effect */
+
+  /* Add any other row-specific styles here if needed */
+}
+
+/* Stripe every other row */
+.table-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for rows */
+.table-container tr:hover {
+  background-color: #ddd;
+}

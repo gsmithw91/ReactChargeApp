@@ -1,0 +1,52 @@
+/* Table container */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Styling for the table */
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table headers */
+.table-container th {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+/* Table data cells */
+.table-container td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* Rows */
+.table-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for rows */
+.table-container tr:hover {
+  background-color: #ddd;
+}
+
+/* Button style inside the table */
+.table-container button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.table-container button:hover {
+  background-color: #0056b3;
+  color: white;
+}

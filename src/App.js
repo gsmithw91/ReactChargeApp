@@ -23,7 +23,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hospital Systems</h1>
       <SystemList onSystemSelect={handleSystemSelect} />
       <LocationList
         selectedSystem={selectedSystem}

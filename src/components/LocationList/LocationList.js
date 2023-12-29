@@ -19,24 +19,24 @@ function LocationList({ selectedSystem, onLocationSelect }) {
           console.error("Error fetching locations:", error);
           setLoading(false);
         });
+    } else {
+      setLocations([]); // Reset locations when no system is selected
     }
   }, [selectedSystem.id]);
 
-  // Function to handle location selection and fetch charges data
   const handleLocationClick = (locationId) => {
-    onLocationSelect(locationId); // Pass the locationId to the parent component (App.js)
+    onLocationSelect(locationId);
   };
 
   return (
     <div className="locations-list">
       {isLoading ? (
         <p>Loading locations...</p>
-      ) : (
+      ) : locations.length > 0 ? (
         locations.map((location) => (
-          // Inside LocationList.js
           <button
             key={location.LocationID}
-            onClick={() => handleLocationClick(location.LocationID)} // Pass locationId to the parent component
+            onClick={() => handleLocationClick(location.LocationID)}
             style={{
               backgroundColor: selectedSystem.color || "#defaultColor",
             }}
@@ -44,6 +44,9 @@ function LocationList({ selectedSystem, onLocationSelect }) {
             {location.LocationName}
           </button>
         ))
+      ) : (
+        // Display this message when there are no locations
+        <p>No locations available for the selected system.</p>
       )}
     </div>
   );

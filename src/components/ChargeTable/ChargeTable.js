@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import "./ChargeTable.css";
+import Header from "./Header/Header";
+import Table from "./Table/Table";
 
 function ChargeTable({ systemId, locationId, setSelectedRows }) {
   const [charges, setCharges] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [rowsPerPage] = useState(5);
-  const [originalColumnOrder, setOriginalColumnOrder] = useState([
+  const rowsPerPage = 5;
+  const initialColumns = [
     "ServiceDescription",
     "BillingCode",
-  ]);
+    "GrossCharge",
+    "DiscountedCashPrice",
+  ];
 
   useEffect(() => {
     if (systemId && locationId) {
@@ -24,30 +27,6 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
         .then((response) => {
           setCharges(response.data);
           setLoading(false);
-
-          if (response.data.length > 0) {
-            const columns = Object.keys(response.data[0])
-              .filter(
-                (col) =>
-                  ![
-                    "SystemID",
-                    "LocationID",
-                    "ServiceDescription",
-                    "BillingCode",
-                    "LocationName",
-                  ].includes(col)
-              )
-              .sort(); // Sort the remaining columns alphabetically
-
-            setOriginalColumnOrder([
-              "LocationName",
-              "ServiceDescription",
-              "BillingCode",
-              "GrossCharge",
-              "DiscountedCashPrice",
-              ...columns, // Append the sorted columns
-            ]);
-          }
         })
         .catch((error) => {
           console.error("Error fetching charges data:", error);
@@ -68,15 +47,11 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
 
   const filteredCharges = searchTerm
     ? charges.filter((charge) =>
-        Object.values(charge).some((value) => {
-          if (typeof value === "string") {
-            return (
-              value != null &&
-              value.toString().toLowerCase().includes(searchTerm.toLowerCase())
-            );
-          }
-          return false;
-        })
+        Object.values(charge).some(
+          (value) =>
+            typeof value === "string" &&
+            value.toLowerCase().includes(searchTerm.toLowerCase())
+        )
       )
     : charges;
 
@@ -87,84 +62,17 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
     indexOfLastCharge
   );
 
-  const onDragEnd = (result) => {
-    if (!result.destination) {
-      return;
-    }
-
-    const items = Array.from(originalColumnOrder);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
-    setOriginalColumnOrder(items); // Update the column order
-  };
-
   return (
     <div className="charge-table">
-      <h2>Charges for Selected System and Location</h2>
-      <input
-        type="text"
-        placeholder="Search charges..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="charge-table-search"
-      />
+      <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       {isLoading ? (
         <p>Loading charges data...</p>
       ) : (
-        <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="droppable" direction="horizontal">
-            {(provided) => (
-              <div {...provided.droppableProps} ref={provided.innerRef}>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Action</th>
-                      {originalColumnOrder.map((column, index) => (
-                        <Draggable
-                          key={`column-${column}-${index}`} // Unique key combining column name and index
-                          draggableId={`column-${column}-${index}`} // Unique draggableId
-                          index={index}
-                        >
-                          {(provided) => (
-                            <th
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
-                              {...provided.dragHandleProps}
-                            >
-                              {column}
-                            </th>
-                          )}
-                        </Draggable>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {currentCharges.map((charge, rowIndex) => (
-                      <tr key={`charge-${charge.ChargeID || rowIndex}`}>
-                        <td>
-                          <button
-                            onClick={() => handleAddToChargeSheet(charge)}
-                          >
-                            Add to ChargeSheet
-                          </button>
-                        </td>
-                        {originalColumnOrder.map((column, columnIndex) => (
-                          <td
-                            key={`charge-${
-                              charge.ChargeID || rowIndex
-                            }-${column}-${columnIndex}`}
-                          >
-                            {charge[column]}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
+        <Table
+          charges={currentCharges}
+          initialColumns={initialColumns}
+          handleAddToChargeSheet={handleAddToChargeSheet}
+        />
       )}
     </div>
   );
