@@ -1,0 +1,11 @@
+.column-selector button {
+  margin-right: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+}
+
+.column-selector button.selected {
+  background-color: #007bff;
+  color: white;
+}
