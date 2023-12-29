@@ -1,8 +1,10 @@
-// Table.js
 import React from "react";
 import TableRow from "../TableRow/TableRow";
 
-function Table({ charges, initialColumns, handleAddToChargeSheet }) {
+function Table({ charges = [], initialColumns = [], handleAddToChargeSheet }) {
+  console.log("Charges:", charges); // Debugging
+  console.log("Initial Columns:", initialColumns); // Debugging
+
   return (
     <table>
       <thead>
@@ -11,12 +13,13 @@ function Table({ charges, initialColumns, handleAddToChargeSheet }) {
           {initialColumns.map((column, index) => (
             <th key={`column-${column}-${index}`}>{column}</th>
           ))}
-          {Object.keys(charges[0] || {}).map((column, index) => {
-            if (!initialColumns.includes(column)) {
-              return <th key={`column-${column}-${index}`}>{column}</th>;
-            }
-            return null;
-          })}
+          {charges.length > 0 &&
+            Object.keys(charges[0]).map((column, index) => {
+              if (!initialColumns.includes(column)) {
+                return <th key={`column-${column}-${index}`}>{column}</th>;
+              }
+              return null;
+            })}
         </tr>
       </thead>
       <tbody>
@@ -26,7 +29,7 @@ function Table({ charges, initialColumns, handleAddToChargeSheet }) {
             charge={charge}
             initialColumns={initialColumns}
             handleAddToChargeSheet={handleAddToChargeSheet}
-            rowIndex={rowIndex} // Pass rowIndex as a prop
+            rowIndex={rowIndex}
           />
         ))}
       </tbody>

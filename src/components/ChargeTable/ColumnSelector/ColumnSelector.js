@@ -1,45 +1,45 @@
-import React, { useState, useEffect } from "react";
-import "./ColumnSelector.css";
+import React from "react";
+import axios from "axios";
 
-function ColumnSelector({ availableColumns, onColumnChange }) {
-  // Default columns to be selected
-  const defaultSelectedColumns = [
-    "BillingCode",
-    "ServiceDescription",
-    "GrossCharge",
-    "DiscountedCashPrice",
-  ];
+function ColumnSelector({ systemId, selectedColumns, setSelectedColumns }) {
+  const [availableColumns, setAvailableColumns] = React.useState([]);
 
-  const [selectedColumns, setSelectedColumns] = useState(
-    defaultSelectedColumns
-  );
+  React.useEffect(() => {
+    if (systemId) {
+      axios
+        .get(`http://127.0.0.1:5000/react/columns/${systemId}`)
+        .then((response) => {
+          setAvailableColumns(response.data.columns);
+          // Optionally set all columns by default
+          // setSelectedColumns(response.data.columns);
+        })
+        .catch((error) => console.error(`Error fetching columns: ${error}`));
+    }
+  }, [systemId, setSelectedColumns]);
 
-  useEffect(() => {
-    // Update selected columns if available columns change
-    setSelectedColumns(
-      selectedColumns.filter((column) => availableColumns.includes(column))
-    );
-  }, [availableColumns]);
-
-  const handleColumnClick = (column) => {
-    const updatedColumns = selectedColumns.includes(column)
-      ? selectedColumns.filter((c) => c !== column) // Remove column
-      : [...selectedColumns, column]; // Add column
-
-    setSelectedColumns(updatedColumns);
-    onColumnChange(updatedColumns);
+  const handleColumnChange = (column) => {
+    setSelectedColumns((prevSelectedColumns) => {
+      if (prevSelectedColumns.includes(column)) {
+        // If column is already selected, remove it
+        return prevSelectedColumns.filter((col) => col !== column);
+      } else {
+        // If column is not selected, add it
+        return [...prevSelectedColumns, column];
+      }
+    });
   };
 
   return (
     <div className="column-selector">
       {availableColumns.map((column) => (
-        <button
-          key={column}
-          onClick={() => handleColumnClick(column)}
-          className={selectedColumns.includes(column) ? "selected" : ""}
-        >
+        <div key={column}>
+          <input
+            type="checkbox"
+            checked={selectedColumns.includes(column)}
+            onChange={() => handleColumnChange(column)}
+          />
           {column}
-        </button>
+        </div>
       ))}
     </div>
   );

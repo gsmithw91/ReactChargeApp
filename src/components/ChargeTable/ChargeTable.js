@@ -3,19 +3,20 @@ import axios from "axios";
 import "./ChargeTable.css";
 import Header from "./Header/Header";
 import Table from "./Table/Table";
+import ColumnSelector from "./ColumnSelector/ColumnSelector"; // Import the ColumnSelector component
 
 function ChargeTable({ systemId, locationId, setSelectedRows }) {
   const [charges, setCharges] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 5;
-  const initialColumns = [
+  const [selectedColumns, setSelectedColumns] = useState([
     "ServiceDescription",
     "BillingCode",
     "GrossCharge",
     "DiscountedCashPrice",
-  ];
+  ]); // State to manage selected columns
+  const rowsPerPage = 5;
 
   useEffect(() => {
     if (systemId && locationId) {
@@ -65,12 +66,17 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
   return (
     <div className="charge-table">
       <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <ColumnSelector
+        systemId={systemId}
+        selectedColumns={selectedColumns}
+        setSelectedColumns={setSelectedColumns}
+      />
       {isLoading ? (
         <p>Loading charges data...</p>
       ) : (
         <Table
           charges={currentCharges}
-          initialColumns={initialColumns}
+          columns={selectedColumns} // Use selectedColumns here
           handleAddToChargeSheet={handleAddToChargeSheet}
         />
       )}
