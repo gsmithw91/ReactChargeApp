@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import LocationDetails from "./LocationDetails/LocationDetails"; // Import the LocationDetails component
 import "./LocationList.css";
 
 function LocationList({ selectedSystem, onLocationSelect }) {
   const [locations, setLocations] = useState([]);
   const [isLoading, setLoading] = useState(false);
+  const [selectedLocationId, setSelectedLocationId] = useState(null); // State to track the selected location ID
 
   useEffect(() => {
     if (selectedSystem.id !== null) {
@@ -26,27 +28,35 @@ function LocationList({ selectedSystem, onLocationSelect }) {
 
   const handleLocationClick = (locationId) => {
     onLocationSelect(locationId);
+    setSelectedLocationId(locationId); // Update the selected location ID
   };
 
   return (
-    <div className="locations-list">
-      {isLoading ? (
-        <p>Loading locations...</p>
-      ) : locations.length > 0 ? (
-        locations.map((location) => (
-          <button
-            key={location.LocationID}
-            onClick={() => handleLocationClick(location.LocationID)}
-            style={{
-              backgroundColor: selectedSystem.color || "#defaultColor",
-            }}
-          >
-            {location.LocationName}
-          </button>
-        ))
-      ) : (
-        // Display this message when there are no locations
-        <p>No locations available for the selected system.</p>
+    <div className="location-container">
+      {" "}
+      {/* This div wraps the entire content */}
+      <div className="locations-list">
+        {isLoading ? (
+          <p>Loading locations...</p>
+        ) : locations.length > 0 ? (
+          locations.map((location) => (
+            <button
+              key={location.LocationID}
+              onClick={() => handleLocationClick(location.LocationID)}
+              style={{
+                backgroundColor: selectedSystem.color || "#defaultColor",
+              }}
+            >
+              {location.LocationName}
+            </button>
+          ))
+        ) : (
+          <p>No locations available for the selected system.</p>
+        )}
+      </div>
+      {/* LocationDetails now has a conditional render based on whether a locationId is selected */}
+      {selectedLocationId && (
+        <LocationDetails locationId={selectedLocationId} />
       )}
     </div>
   );

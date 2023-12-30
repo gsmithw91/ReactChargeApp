@@ -1,5 +1,5 @@
-import React from "react";
 import TableRow from "../TableRow/TableRow";
+import React, { useEffect, useState } from "react";
 
 function Table({ charges, selectedColumns, handleAddToChargeSheet }) {
   return (

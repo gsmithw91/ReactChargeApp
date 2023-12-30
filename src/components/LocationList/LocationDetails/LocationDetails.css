@@ -1,0 +1,29 @@
+.location-details-container {
+  display: flex; /* Use flexbox to layout children side by side */
+  justify-content: space-between; /* Add space between the two children */
+  align-items: flex-start; /* Align items to the start of the flex container */
+  margin: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-details,
+.location-map {
+  flex: 1; /* Both children will take up equal space */
+  padding: 10px;
+}
+
+.location-map {
+  /* Add styles for your map here, like setting a border or overflow properties */
+  height: 300px; /* Set a fixed height or use responsive height */
+  background-color: #ddd; /* Placeholder color, replace with your map */
+}
+
+/* Add responsive behavior */
+@media (max-width: 768px) {
+  .location-details-container {
+    flex-direction: column; /* Stack children vertically on smaller screens */
+  }
+}
