@@ -1,0 +1,55 @@
+/* Container for the list of carriers */
+.carrier-list {
+    margin: 20px; /* Add some margin around the container */
+    padding: 10px; /* Padding inside the container */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Label for the list of carriers */
+.carrier-list h2 {
+    margin-bottom: 10px; /* Space below the label */
+    color: #333; /* Text color for the label */
+    font-size: 1.5em; /* Font size for the label */
+}
+
+/* Styling for carrier buttons and insurance plan buttons */
+.carrier-list button, .insurance-plan-button {
+    margin: 5px; /* Space between buttons */
+    padding: 10px 15px; /* Padding inside buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    border: none; /* No border for buttons */
+    border-radius: 4px; /* Rounded corners for buttons */
+    transition: all 0.3s ease; /* Smooth transition for color and background */
+    color: white; /* Text color for buttons */
+    font-size: 1em; /* Font size for buttons */
+    font-weight: 500; /* Font weight for buttons */
+    background-color: #007bff; /* Background color for buttons */
+}
+
+/* Hover effect for buttons */
+.carrier-list button:hover, .insurance-plan-button:hover {
+    background-color: #0056b3; /* Slightly darker shade on hover */
+    color: #fff; /* Text color on hover */
+}
+
+/* Loading text style */
+.carrier-list p {
+    color: #666; /* Color for the loading text */
+    text-align: center; /* Center the loading text */
+}
+
+/* Styling for each carrier row */
+.carrier-row {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px; /* Space between rows */
+}
+
+/* Container for insurance plan buttons */
+.insurance-plan-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Wrap buttons to the next line if needed */
+    margin-left: 10px; /* Space between carrier button and insurance plan buttons */
+}

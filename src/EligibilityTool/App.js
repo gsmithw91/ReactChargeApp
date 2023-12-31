@@ -1,11 +1,15 @@
+// App.js
 import React from "react";
-// Import other components and styles as needed
+import CarrierList from "./components/CarrierList/CarrierList";
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Hello World</header>
-      <main>{/* Main content of the EligibilityTool app */}</main>
+      <header className="App-header">Eligibility Tool</header>
+      <main>
+        <CarrierList />
+      </main>
     </div>
   );
 }
