@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./ChargeMaster/App"; // Correct path to App.js
+import App from "./EligibilityTool/App"; // Correct path to App.js
 import "./index.css";
 
 ReactDOM.render(
