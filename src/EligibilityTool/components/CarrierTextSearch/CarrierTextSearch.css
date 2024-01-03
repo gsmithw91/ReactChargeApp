@@ -1,0 +1,46 @@
+/* CarrierTextSearch.css */
+
+/* Main container for CarrierTextSearch */
+.carrier-text-search-container {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px; /* Spacing around the container */
+}
+
+/* Styling for the react-select dropdown */
+.carrier-selector-dropdown {
+  margin-bottom: 20px;
+}
+
+/* Style overrides for react-select */
+.carrier-selector-dropdown .Select__control {
+  border-color: #ccc;
+}
+
+.carrier-selector-dropdown .Select__menu {
+  border-color: #ccc;
+}
+
+/* Styling for the selected carriers section */
+.selected-carriers {
+  margin-top: 10px;
+}
+
+/* Styling for individual selected carrier items */
+.selected-carrier-item {
+  background-color: #e9e9e9; /* Slightly darker background for contrast */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Styling for the heading inside selected carriers */
+.selected-carriers h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* You can add more specific styling as needed for other elements */
