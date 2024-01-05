@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Select from "react-select"; // Import react-select
 import "./InsurancePlanList.css";
+import EligibleLocationList from "./EligibleLocationList/EligibleLocationList";
+
+
 
 function InsurancePlanList({ carrierId }) {
   const [insurancePlans, setInsurancePlans] = useState([]);
@@ -13,9 +16,7 @@ function InsurancePlanList({ carrierId }) {
     if (carrierId) {
       setLoading(true);
       axios
-        .get(
-          `http://127.0.0.1:5000/react/eligibility/insurance-plans/${carrierId}`
-        )
+        .get(`http://127.0.0.1:5000/react/eligibility/insurance-plans/${carrierId}`)
         .then((response) => {
           const transformedPlans = response.data.map((plan) => ({
             value: plan.PlanID,
@@ -36,8 +37,13 @@ function InsurancePlanList({ carrierId }) {
     setSelectedPlans(selectedOptions || []);
   };
 
-  if (isLoading) return <div>Loading insurance plans...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (isLoading) {
+    return <div>Loading insurance plans...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="insurance-plan-list">
@@ -49,16 +55,15 @@ function InsurancePlanList({ carrierId }) {
         onChange={handlePlanSelect}
         className="plan-selector-dropdown"
       />
-      <div className="selected-plans">
-        <h3>Selected Plans</h3>
-        {selectedPlans.map((plan) => (
-          <div key={plan.value} className="selected-plan-item">
-            {plan.label}
-          </div>
-        ))}
-      </div>
+      {selectedPlans.map((plan) => (
+        <div key={plan.value} className="plan-container">
+          <h4 className="plan-title">{plan.label}</h4>
+          <EligibleLocationList planId={plan.value} />
+        </div>
+      ))}
     </div>
   );
 }
 
 export default InsurancePlanList;
+
