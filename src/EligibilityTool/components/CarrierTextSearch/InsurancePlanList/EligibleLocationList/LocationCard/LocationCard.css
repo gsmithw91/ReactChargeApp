@@ -1,0 +1,44 @@
+/* LocationCard.css */
+
+/* Styling for each location card */
+.location-card {
+    cursor: pointer; /* Pointer cursor on hover over the card */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    border-radius: 5px; /* Rounded corners for the card */
+}
+
+/* Header section of the card */
+.location-card h4 {
+    margin: 0; /* Remove default margin */
+    padding: 8px 10px; /* Padding for the header */
+    background-color: #007bff; /* Background color for header */
+    color: white; /* Text color for header */
+    border-radius: 5px 5px 0 0; /* Rounded corners for top of the card */
+}
+
+/* Button to show/hide details */
+.location-card button {
+    margin: 5px; /* Space around the button */
+    padding: 6px 12px; /* Padding inside the button */
+    background-color: #28a745; /* Background color for button */
+    color: white; /* Text color for button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.location-card button:hover {
+    background-color: #218838; /* Slightly darker shade on hover */
+}
+
+/* Location details section */
+.location-card .location-details {
+    padding: 10px; /* Padding inside details section */
+    background-color: #f8f9fa; /* Light background for details section */
+    border-top: 1px solid #dee2e6; /* Border top to separate from header */
+}
+
+/* Styling for individual detail paragraphs */
+.location-card .location-details p {
+    margin: 5px 0; /* Margin around each paragraph */
+}
