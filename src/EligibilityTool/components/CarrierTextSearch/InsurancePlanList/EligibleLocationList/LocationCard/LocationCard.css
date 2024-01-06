@@ -2,43 +2,88 @@
 
 /* Styling for each location card */
 .location-card {
-    cursor: pointer; /* Pointer cursor on hover over the card */
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
-    border-radius: 5px; /* Rounded corners for the card */
+  cursor: pointer; /* Pointer cursor on hover over the card */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 5px; /* Rounded corners for the card */
 }
 
 /* Header section of the card */
 .location-card h4 {
-    margin: 0; /* Remove default margin */
-    padding: 8px 10px; /* Padding for the header */
-    background-color: #007bff; /* Background color for header */
-    color: white; /* Text color for header */
-    border-radius: 5px 5px 0 0; /* Rounded corners for top of the card */
+  margin: 0; /* Remove default margin */
+  padding: 8px 10px; /* Padding for the header */
+  background-color: #007bff; /* Background color for header */
+  color: white; /* Text color for header */
+  border-radius: 5px 5px 0 0; /* Rounded corners for top of the card */
 }
 
 /* Button to show/hide details */
 .location-card button {
-    margin: 5px; /* Space around the button */
-    padding: 6px 12px; /* Padding inside the button */
-    background-color: #28a745; /* Background color for button */
-    color: white; /* Text color for button */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners for the button */
-    cursor: pointer; /* Pointer cursor on hover */
+  margin: 5px; /* Space around the button */
+  padding: 6px 12px; /* Padding inside the button */
+  background-color: #28a745; /* Background color for button */
+  color: white; /* Text color for button */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners for the button */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
 .location-card button:hover {
-    background-color: #218838; /* Slightly darker shade on hover */
+  background-color: #218838; /* Slightly darker shade on hover */
 }
 
 /* Location details section */
 .location-card .location-details {
-    padding: 10px; /* Padding inside details section */
-    background-color: #f8f9fa; /* Light background for details section */
-    border-top: 1px solid #dee2e6; /* Border top to separate from header */
+  padding: 10px; /* Padding inside details section */
+  background-color: #f8f9fa; /* Light background for details section */
+  border-top: 1px solid #dee2e6; /* Border top to separate from header */
 }
 
 /* Styling for individual detail paragraphs */
 .location-card .location-details p {
-    margin: 5px 0; /* Margin around each paragraph */
+  margin: 5px 0; /* Margin around each paragraph */
+}
+
+/* Styles for the website button */
+.location-card .website-button {
+  background-color: #1e90ff; /* Distinct blue color for the website button */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.location-card .website-button:hover {
+  background-color: #187bcd; /* Darker shade on hover */
+}
+
+/* Styles for the pricing info button */
+.location-card .pricing-info-button {
+  background-color: #ff8c00; /* Orange color for the pricing info button */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.location-card .pricing-info-button:hover {
+  background-color: #e07a00; /* Darker shade on hover */
+}
+
+/* Styles for the Google Maps button */
+.location-card .google-maps-button {
+  background-color: #32cd32; /* Green color for the Google Maps button */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.location-card .google-maps-button:hover {
+  background-color: #28a745; /* Darker shade on hover */
 }

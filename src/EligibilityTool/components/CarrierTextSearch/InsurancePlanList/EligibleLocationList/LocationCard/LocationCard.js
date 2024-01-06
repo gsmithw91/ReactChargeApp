@@ -29,10 +29,29 @@ function LocationCard({ locationId }) {
 
   const formatFullAddress = (details) => {
     if (!details) return "";
-
     const { Address, City, State, ZipCode } = details;
     return `${Address}, ${City}, ${State} ${ZipCode}`;
   };
+
+  const formatPhoneNumber = (phoneNumber) => {
+    if (!phoneNumber) return "";
+    const phoneString = phoneNumber.toString();
+    return `(${phoneString.substring(0, 3)})-${phoneString.substring(
+      3,
+      6
+    )}-${phoneString.substring(6)}`;
+  };
+
+  const createGoogleMapsUrl = (details) => {
+    if (!details) return "";
+    const addressString = `${details.Address}, ${details.City}, ${details.State} ${details.ZipCode}`;
+    return `https://www.google.com/maps/place/${encodeURIComponent(
+      addressString
+    )}`;
+  };
+
+  if (isLoading) return <div>Loading location details...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   if (isLoading) return <div>Loading location details...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -47,8 +66,38 @@ function LocationCard({ locationId }) {
             <div className="location-details">
               <p>{locationDetails.LocationName}</p>
               <p>Address: {formatFullAddress(locationDetails)}</p>
-              <p>Phone: {locationDetails.Phone}</p>
-              {/* Add more details as per your data structure */}
+              {locationDetails.Phone && (
+                <p>
+                  Phone:{" "}
+                  <a href={`tel:${locationDetails.Phone}`}>
+                    {formatPhoneNumber(locationDetails.Phone)}
+                  </a>
+                </p>
+              )}
+              {locationDetails.BaseURL && (
+                <button
+                  onClick={() => window.open(locationDetails.BaseURL, "_blank")}
+                  className="website-button"
+                >
+                  Home Page
+                </button>
+              )}
+              {locationDetails.EligURL && (
+                <button
+                  onClick={() => window.open(locationDetails.EligURL, "_blank")}
+                  className="pricing-info-button"
+                >
+                  Pricing and Insurance Information
+                </button>
+              )}
+              <button
+                onClick={() =>
+                  window.open(createGoogleMapsUrl(locationDetails), "_blank")
+                }
+                className="google-maps-button"
+              >
+                View on Google Maps
+              </button>
             </div>
           )}
         </>

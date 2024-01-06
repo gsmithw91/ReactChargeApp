@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import {
   BrowserRouter as Router,
   Routes,
@@ -27,7 +27,7 @@ function AppWithTransition() {
           <Routes location={location}>
             <Route path="/chargemaster" element={<ChargeMaster />} />
             <Route path="/eligibilitytool" element={<EligibilityTool />} />
-            <Route path="/" element={<EligibilityTool />} />{" "}
+            <Route path="/" element={<EligibilityTool />} />
             {/* Default route */}
           </Routes>
         </CSSTransition>
@@ -36,11 +36,13 @@ function AppWithTransition() {
   );
 }
 
-ReactDOM.render(
+// React 18 style of rendering with createRoot
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(
   <React.StrictMode>
     <Router>
       <AppWithTransition />
     </Router>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
