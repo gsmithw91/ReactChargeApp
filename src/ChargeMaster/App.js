@@ -3,6 +3,7 @@ import SystemList from "./components/SystemList/SystemList";
 import LocationList from "./components/LocationList/LocationList";
 import ChargeTable from "./components/ChargeTable/ChargeTable";
 import ChargeSheet from "./components/ChargeSheet/ChargeSheet";
+import "./App.css";
 
 function App() {
   const [selectedSystem, setSelectedSystem] = useState({
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+      <header className="App-header">ChargeMaster</header>
       <SystemList onSystemSelect={handleSystemSelect} />
       <LocationList
         selectedSystem={selectedSystem}

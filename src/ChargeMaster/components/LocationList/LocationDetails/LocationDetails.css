@@ -1,7 +1,9 @@
+/* LocationDetails.css */
+
 .location-details-container {
-  display: flex; /* Use flexbox to layout children side by side */
-  justify-content: space-between; /* Add space between the two children */
-  align-items: flex-start; /* Align items to the start of the flex container */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin: 20px;
   padding: 10px;
   background-color: #f9f9f9;
@@ -11,19 +13,33 @@
 
 .location-details,
 .location-map {
-  flex: 1; /* Both children will take up equal space */
+  flex: 1;
   padding: 10px;
+  border: 1px solid #ddd; /* Consistent border styling */
+  border-radius: 4px; /* Rounded corners */
+  background-color: white; /* Consistent background color */
+  margin-right: 10px; /* Space between the two sections */
 }
 
 .location-map {
-  /* Add styles for your map here, like setting a border or overflow properties */
-  height: 300px; /* Set a fixed height or use responsive height */
-  background-color: #ddd; /* Placeholder color, replace with your map */
+  height: 300px; /* Set a fixed height */
+  background-color: #ddd; /* Placeholder, replace with your map */
+  margin-right: 0; /* No margin on the right for the map section */
 }
 
-/* Add responsive behavior */
+/* Responsive behavior */
 @media (max-width: 768px) {
   .location-details-container {
-    flex-direction: column; /* Stack children vertically on smaller screens */
+    flex-direction: column;
+  }
+
+  .location-details,
+  .location-map {
+    margin-right: 0; /* Remove margin for smaller screens */
+    margin-bottom: 10px; /* Add space below each section */
+  }
+
+  .location-map {
+    height: 200px; /* Adjust the height on smaller screens */
   }
 }

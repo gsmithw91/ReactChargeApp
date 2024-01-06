@@ -1,24 +1,26 @@
+/* ChargeSheetActions.css */
+
 .charge-sheet-actions {
   display: flex;
-  justify-content: flex-end; /* Aligns buttons to the right */
-  width: 70%; /* Matches the width of the charge items */
-  padding: 10px 0; /* Gives some space above and below the actions */
+  justify-content: flex-end; /* Align buttons to the right */
+  width: 70%; /* Match width with charge items */
+  padding: 10px 0; /* Space above and below the actions */
 }
 
 /* Style the buttons */
 .charge-sheet-actions button {
   margin-left: 10px; /* Spacing between buttons */
-  padding: 10px 15px;
+  padding: 10px 15px; /* Comfortable padding */
   border: none;
-  border-radius: 4px;
-  background-color: #007bff;
+  border-radius: 4px; /* Rounded corners */
+  background-color: #4caf50; /* Consistent button color with App header */
   color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .charge-sheet-actions button:hover {
-  background-color: #0056b3;
+  background-color: #45a049; /* Slightly darker green on hover */
 }
 
 .charge-sheet-actions p {

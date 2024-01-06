@@ -1,3 +1,5 @@
+/* HeaderContainer.css */
+
 /* Header container */
 .header-container {
   margin: 20px;
@@ -9,10 +11,10 @@
 
 /* Search input */
 .header-container .charge-table-search {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 1em;
-  border: 2px solid #ccc;
-  border-radius: 4px;
+  width: 100%; /* Full width of its container */
+  padding: 10px; /* Comfortable padding for typing */
+  margin-bottom: 10px; /* Space below the search box */
+  font-size: 16px; /* Consistent font size with other inputs */
+  border: 1px solid #ddd; /* Softer border color for consistency */
+  border-radius: 4px; /* Rounded corners for modern look */
 }

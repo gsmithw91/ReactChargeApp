@@ -1,38 +1,35 @@
+/* ChargeMaster/App.css */
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  font-family: "Arial", sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  min-height: 100vh; /* Ensure full vertical height */
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #4caf50; /* Green header */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 24px;
+  margin-bottom: 30px; /* Space after the header */
+  width: 100%; /* Full width */
+}
+
+/* Layout for the main content */
+.App-content {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .App-content {
+    padding: 10px;
   }
 }

@@ -1,55 +1,58 @@
+/* ChargeSheet.css */
+
 .container {
   display: flex;
-  justify-content: flex-start; /* Changed from 'start' to 'flex-start' */
-  align-items: flex-start; /* Ensure this is 'flex-start' for better support */
-  gap: 20px; /* Adds space between ChargeSheet and SummaryBox */
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px; /* Space between ChargeSheet and SummaryBox */
 }
 
 .charge-sheet {
   display: flex;
-  flex: 1; /* Allows ChargeSheet to grow to fit the container */
-  flex-direction: column; /* Stacks children vertically */
-  align-items: flex-start; /* Aligns children to the start of the cross axis, changed from 'center' */
-  padding: 20px; /* Padding inside the charge-sheet */
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
 }
 
 .charge-item-wrapper {
   width: 70%;
-  margin-bottom: 10px; /* Spacing between items */
+  margin-bottom: 10px;
 }
 
-/* Add this to ensure the ul takes the full width */
+/* Full width for unordered list with no default list style */
 .charge-sheet ul {
   width: 100%;
   padding: 0;
   list-style: none;
 }
 
-/* Add some styling to the charge-item */
+/* Styling for individual charge items */
 .charge-item {
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative; /* Needed for absolute positioning of the color box */
+  position: relative;
 }
 
 .charge-item p {
-  margin: 0; /* Removes default paragraph margin */
-  line-height: 1.5; /* Adjust line spacing */
-  text-align: left; /* Aligns text to the left */
+  margin: 0;
+  line-height: 1.5;
+  text-align: left;
 }
 
+/* Color box for system indication */
 .system-color-box {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  position: absolute; /* Positions the color box relative to the charge-item */
-  right: 15px; /* 15px from the right edge of charge-item */
-  top: 15px; /* 15px from the top edge of charge-item */
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }
 
-/* Ensure that the header is full width */
+/* Full-width header with centered text */
 .charge-sheet > h2 {
   width: 100%;
   text-align: center;

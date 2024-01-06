@@ -1,17 +1,19 @@
+/* Table Rows CSS */
+
 /* Table rows */
 .table-container tr {
-  background-color: #ffffff; /* Set the default background color */
-  transition: background-color 0.3s ease; /* Add a transition effect */
+  background-color: #ffffff; /* Default background color for rows */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 
-  /* Add any other row-specific styles here if needed */
+  /* Additional row-specific styles can be added here if needed */
 }
 
-/* Stripe every other row */
+/* Stripe every other row for better readability */
 .table-container tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; /* Light gray for even rows */
 }
 
 /* Hover effect for rows */
 .table-container tr:hover {
-  background-color: #ddd;
+  background-color: #ddd; /* Slightly darker shade on hover */
 }

@@ -1,0 +1,44 @@
+/* NavigationBar.css */
+
+nav {
+  background-color: #2c3e50; /* Dark background */
+  color: white;
+  padding: 10px 20px; /* Padding around the nav bar */
+  text-align: center; /* Center the navigation links */
+}
+
+nav ul {
+  list-style-type: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  display: inline; /* Display links in a line */
+  margin-right: 20px; /* Space between each link */
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: white;
+  font-size: 16px; /* Font size for the links */
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #1abc9c; /* Color change on hover */
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  nav ul li {
+    display: block; /* Stack links vertically on small screens */
+    margin-right: 0;
+    margin-bottom: 10px; /* Space between stacked links */
+  }
+}

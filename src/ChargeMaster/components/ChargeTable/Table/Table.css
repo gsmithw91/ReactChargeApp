@@ -1,39 +1,41 @@
+/* TableContainer.css */
+
 /* Table container */
 .table-container {
   width: 100%;
-  overflow-x: auto;
+  overflow-x: auto; /* Allows horizontal scrolling for wide tables */
 }
 
 /* Styling for the table */
 .table-container table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse; /* Collapses borders for a cleaner look */
 }
 
 /* Table headers */
 .table-container th {
-  background-color: #007bff;
+  background-color: #4caf50; /* Consistent header color with App header */
   color: white;
   padding: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd; /* Lighter border color for a softer look */
 }
 
 /* Table data cells */
 .table-container td {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd; /* Consistent with table headers */
   text-align: left;
 }
 
-/* Rows */
+/* Zebra striping for rows */
 .table-container tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; /* Light gray for even rows */
 }
 
 /* Hover effect for rows */
 .table-container tr:hover {
-  background-color: #ddd;
+  background-color: #ddd; /* Slightly darker shade on hover */
 }
 
 /* Button style inside the table */
@@ -43,10 +45,12 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  background-color: #4caf50; /* Consistent button color with App header */
+  color: white;
 }
 
 /* Hover effect for buttons */
 .table-container button:hover {
-  background-color: #0056b3;
+  background-color: #45a049; /* Slightly darker green on hover */
   color: white;
 }
