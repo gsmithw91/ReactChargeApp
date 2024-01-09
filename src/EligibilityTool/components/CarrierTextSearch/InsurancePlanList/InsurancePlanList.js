@@ -4,8 +4,6 @@ import Select from "react-select"; // Import react-select
 import "./InsurancePlanList.css";
 import EligibleLocationList from "./EligibleLocationList/EligibleLocationList";
 
-
-
 function InsurancePlanList({ carrierId }) {
   const [insurancePlans, setInsurancePlans] = useState([]);
   const [selectedPlans, setSelectedPlans] = useState([]);
@@ -16,7 +14,9 @@ function InsurancePlanList({ carrierId }) {
     if (carrierId) {
       setLoading(true);
       axios
-        .get(`http://127.0.0.1:5000/react/eligibility/insurance-plans/${carrierId}`)
+        .get(
+          `https://smithtech.io/react/eligibility/insurance-plans/${carrierId}`
+        )
         .then((response) => {
           const transformedPlans = response.data.map((plan) => ({
             value: plan.PlanID,
@@ -66,4 +66,3 @@ function InsurancePlanList({ carrierId }) {
 }
 
 export default InsurancePlanList;
-

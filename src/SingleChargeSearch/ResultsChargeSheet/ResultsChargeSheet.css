@@ -1,0 +1,21 @@
+.results-charge-sheet {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.results-charge-sheet h2 {
+  text-align: center;
+}
+
+.results-list {
+  margin-top: 10px;
+}
+
+.result-item {
+  padding: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}

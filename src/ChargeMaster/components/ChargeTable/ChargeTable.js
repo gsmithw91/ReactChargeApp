@@ -23,7 +23,7 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
       setLoading(true);
       axios
         .get(
-          `http://127.0.0.1:5000/react/charges/system/${systemId}/location/${locationId}`
+          `https://smithtech.io/react/charges/system/${systemId}/location/${locationId}`
         )
         .then((response) => {
           setCharges(response.data);

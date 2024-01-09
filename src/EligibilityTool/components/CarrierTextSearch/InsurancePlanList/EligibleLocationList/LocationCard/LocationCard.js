@@ -13,7 +13,7 @@ function LocationCard({ locationId }) {
       setIsLoading(true);
       axios
         .get(
-          `http://127.0.0.1:5000/react/eligibility/location-details/${locationId}`
+          `https://smithtech.io/react/eligibility/location-details/${locationId}`
         )
         .then((response) => {
           setLocationDetails(response.data);

@@ -11,6 +11,7 @@ import "./index.css";
 import NavBar from "./NavigationBar/NavigationBar";
 import ChargeMaster from "./ChargeMaster/App";
 import EligibilityTool from "./EligibilityTool/App";
+import SingleChargeSearch from "./SingleChargeSearch/App"; // Import the renamed component
 
 function AppWithTransition() {
   let location = useLocation();
@@ -19,16 +20,15 @@ function AppWithTransition() {
     <>
       <NavBar />
       <TransitionGroup>
-        <CSSTransition
-          key={location.key}
-          timeout={300} // Duration of the transition
-          classNames="fade" // Class name for the transition
-        >
+        <CSSTransition key={location.key} timeout={300} classNames="fade">
           <Routes location={location}>
             <Route path="/chargemaster" element={<ChargeMaster />} />
             <Route path="/eligibilitytool" element={<EligibilityTool />} />
+            <Route
+              path="/singlechargesearch"
+              element={<SingleChargeSearch />}
+            />{" "}
             <Route path="/" element={<EligibilityTool />} />
-            {/* Default route */}
           </Routes>
         </CSSTransition>
       </TransitionGroup>

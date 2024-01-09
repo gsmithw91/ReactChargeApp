@@ -13,7 +13,7 @@ function CarrierTextSearch() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://127.0.0.1:5000/react/eligibility/carriers")
+      .get("https://smithtech.io/react/eligibility/carriers")
       .then((response) => {
         const transformedCarriers = response.data.map((carrier) => ({
           value: carrier.CarrierID,

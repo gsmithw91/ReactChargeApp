@@ -9,7 +9,7 @@ function ColumnSelector({ systemId, selectedColumns, setSelectedColumns }) {
   useEffect(() => {
     if (systemId) {
       axios
-        .get(`http://127.0.0.1:5000/react/columns/${systemId}`)
+        .get(`https://smithtech.io/react/columns/${systemId}`)
         .then((response) => {
           const columns = response.data.columns.map((column) => ({
             value: column,

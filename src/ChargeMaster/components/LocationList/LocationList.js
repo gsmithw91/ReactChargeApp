@@ -12,7 +12,7 @@ function LocationList({ selectedSystem, onLocationSelect }) {
     if (selectedSystem.id !== null) {
       setLoading(true);
       axios
-        .get(`http://127.0.0.1:5000/react/locations/${selectedSystem.id}`)
+        .get(`https://smithtech.io/react/locations/${selectedSystem.id}`)
         .then((response) => {
           setLocations(response.data);
           setLoading(false);

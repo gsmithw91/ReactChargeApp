@@ -13,7 +13,7 @@ function SystemList({ onSystemSelect }) {
   // Fetch all systems on component mount
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:5000/react/systems")
+      .get("https://smithtech.io/react/systems")
       .then((response) => {
         setSystems(response.data);
       })
