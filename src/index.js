@@ -11,7 +11,9 @@ import "./index.css";
 import NavBar from "./NavigationBar/NavigationBar";
 import ChargeMaster from "./ChargeMaster/App";
 import EligibilityTool from "./EligibilityTool/App";
-import SingleChargeSearch from "./SingleChargeSearch/App"; // Import the renamed component
+import SingleChargeSearch from "./SingleChargeSearch/App";
+import LoginComponent from "./LoginComponents/LoginComponent";
+import SignUpComponent from "./SignUpComponent/SignUpComponent";
 
 function AppWithTransition() {
   let location = useLocation();
@@ -27,7 +29,9 @@ function AppWithTransition() {
             <Route
               path="/singlechargesearch"
               element={<SingleChargeSearch />}
-            />{" "}
+            />
+            <Route path="/login" element={<LoginComponent />} />
+            <Route path="/signup" element={<SignUpComponent />} />
             <Route path="/" element={<EligibilityTool />} />
           </Routes>
         </CSSTransition>
@@ -46,3 +50,5 @@ root.render(
     </Router>
   </React.StrictMode>
 );
+
+// You can add other configuration or setup here
