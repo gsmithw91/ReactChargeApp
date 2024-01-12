@@ -1,0 +1,67 @@
+/* SignUpComponent.css */
+
+/* Main container for SignUpComponent */
+.signup-container {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px; /* Spacing around the container */
+  max-width: 400px; /* Limit the width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Styling for form elements */
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling for form groups (input + label) */
+.signup-container .form-group {
+  margin-bottom: 15px;
+}
+
+/* Styling for labels */
+.signup-container label {
+  font-weight: bold;
+}
+
+/* Styling for input fields */
+.signup-container input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Styling for the Sign Up button */
+.signup-container button {
+  background-color: #007bff; /* Blue color for the button */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Hover effect for the Sign Up button */
+.signup-container button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styling for the paragraph below the Sign Up button */
+.signup-container p {
+  text-align: center;
+}
+
+/* Styling for the "Already have an account?" link */
+.signup-container a {
+  color: #007bff; /* Blue color for the link */
+  text-decoration: none;
+}
+
+/* Hover effect for the link */
+.signup-container a:hover {
+  text-decoration: underline;
+}
