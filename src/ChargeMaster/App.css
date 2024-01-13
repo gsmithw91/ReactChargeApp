@@ -1,25 +1,28 @@
 /* ChargeMaster/App.css */
 
-.App {
-  font-family: "Arial", sans-serif;
-  color: #333;
+/* Apply styles for the entire page */
+body,
+html {
   margin: 0;
   padding: 0;
+  font-family: "Arial", sans-serif;
+  color: #333;
   background-color: #f8f8f8;
-  min-height: 100vh; /* Ensure full vertical height */
+  min-height: 100vh;
 }
 
+/* Style the header */
 .App-header {
-  background-color: #4caf50; /* Green header */
+  background-color: #4caf50;
   color: white;
   text-align: center;
   padding: 15px 0;
   font-size: 24px;
-  margin-bottom: 30px; /* Space after the header */
-  width: 100%; /* Full width */
+  margin-bottom: 30px;
+  width: 100%;
 }
 
-/* Layout for the main content */
+/* Style the main content */
 .App-content {
   padding: 20px;
   display: flex;

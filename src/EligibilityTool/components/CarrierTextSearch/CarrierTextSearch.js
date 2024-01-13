@@ -4,6 +4,28 @@ import Select from "react-select";
 import InsurancePlanList from "./InsurancePlanList/InsurancePlanList";
 import "./CarrierTextSearch.css";
 
+const customStyles = {
+  container: (provided) => ({
+    ...provided,
+    width: "100%",
+  }),
+  control: (provided) => ({
+    ...provided,
+    border: "1px solid #ddd",
+    borderRadius: "4px",
+    backgroundColor: "#000000" /* Changed background color */,
+    color: "white" /* Set text color to white for better contrast */,
+  }),
+  option: (provided, state) => ({
+    ...provided,
+    backgroundColor: state.isSelected
+      ? "#45a049"
+      : "#000000" /* Changed background color */,
+    color: state.isSelected ? "white" : "white" /* Option text color */,
+    cursor: "pointer",
+  }),
+};
+
 function CarrierTextSearch() {
   const [carriers, setCarriers] = useState([]);
   const [selectedCarriers, setSelectedCarriers] = useState([]);
@@ -45,6 +67,7 @@ function CarrierTextSearch() {
         value={selectedCarriers}
         onChange={handleCarrierSelect}
         className="carrier-selector-dropdown"
+        styles={customStyles} // Apply custom styles here
       />
       <div className="selected-carriers">
         <h3>Selected Carriers</h3>

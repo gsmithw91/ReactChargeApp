@@ -15,31 +15,20 @@
 .location-map {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ddd; /* Consistent border styling */
-  border-radius: 4px; /* Rounded corners */
-  background-color: white; /* Consistent background color */
-  margin-right: 10px; /* Space between the two sections */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  margin-right: 10px;
+  text-align: center; /* Center the paragraphs */
 }
 
 .location-map {
-  height: 300px; /* Set a fixed height */
-  background-color: #ddd; /* Placeholder, replace with your map */
-  margin-right: 0; /* No margin on the right for the map section */
+  height: 300px;
+  background-color: #ddd;
+  margin-right: 0;
 }
 
-/* Responsive behavior */
-@media (max-width: 768px) {
-  .location-details-container {
-    flex-direction: column;
-  }
-
-  .location-details,
-  .location-map {
-    margin-right: 0; /* Remove margin for smaller screens */
-    margin-bottom: 10px; /* Add space below each section */
-  }
-
-  .location-map {
-    height: 200px; /* Adjust the height on smaller screens */
-  }
+/* Background color for location-details */
+.location-details {
+  background-color: #e0e0e0; /* Add your desired background color */
 }

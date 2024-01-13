@@ -1,24 +1,22 @@
-/* EligibleLocationList.css */
-
 /* Container for the list of locations */
 .eligible-location-list {
-    display: flex;
-    flex-direction: column; /* Stack location cards vertically */
-    margin: 10px 0; /* Vertical margin for spacing between each list */
-    padding: 10px; /* Padding inside the list container */
+  display: flex;
+  flex-direction: column; /* Stack location cards vertically */
+  margin: 10px 0; /* Vertical margin for spacing between each list */
+  padding: 10px; /* Padding inside the list container */
 }
 
 /* Individual location item */
 .eligible-location-list .location-item {
-    margin-bottom: 10px; /* Space between location cards */
-    background-color: #ffffff; /* White background for each location card */
-    border-radius: 5px; /* Rounded corners for the location cards */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 10px; /* Padding inside each location card */
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  margin-bottom: 10px; /* Space between location cards */
+  background-color: #ffffff; /* White background for each location card */
+  border-radius: 5px; /* Rounded corners for the location cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 10px; /* Padding inside each location card */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
 /* Hover effect for location items */
 .eligible-location-list .location-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
 }

@@ -4,10 +4,11 @@
 .charge-table {
   margin: 20px;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: #000000;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow-x: auto; /* Allows scrolling for wide tables */
+  overflow-x: auto;
+  font-family: "Arial", sans-serif;
 }
 
 /* Styling for the charge table */
@@ -18,7 +19,7 @@
 
 /* Table headers */
 .charge-table th {
-  background-color: #45a049; /* Consistent header color with App header */
+  background-color: #45a049;
   color: white;
   padding: 10px;
   text-align: left;
@@ -29,18 +30,20 @@
 /* Table data cells */
 .charge-table td {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #2f2f2f;
   text-align: left;
+  background-color: #000000;
+  color: white;
 }
 
 /* Styling for rows */
 .charge-table tr:nth-child(even) {
-  background-color: #f2f2f2; /* Zebra striping for rows */
+  background-color: #000000;
 }
 
 /* Hover effect for rows */
 .charge-table tr:hover {
-  background-color: #ddd; /* Color change on hover */
+  background-color: #ddd;
 }
 
 /* Button style inside the table */
@@ -50,21 +53,25 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  background-color: #45a049; /* Consistent button color with App header */
+  background-color: #45a049;
   color: white;
 }
 
 /* Hover effect for buttons */
 .charge-table button:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
+  background-color: #45a049;
   color: white;
 }
 
+/* Search input style */
 .charge-table-search {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  font-size: 16px; /* Consistent font size */
-  border: 1px solid #ddd; /* Consistent border styling */
+  font-size: 16px;
+  border: 1px solid #ddd;
   border-radius: 4px;
+  background-color: #3e3e3e;
+  color: white;
+  font-family: "Arial", sans-serif;
 }

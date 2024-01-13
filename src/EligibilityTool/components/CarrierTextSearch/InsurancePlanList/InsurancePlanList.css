@@ -1,40 +1,33 @@
 /* InsurancePlanList.css */
 
-/* Container for the list of insurance plans */
-.insurance-plan-list {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    flex-wrap: wrap; /* Wrap items if they don't fit in a single line */
-    margin: 20px; /* Add some margin around the container */
-    padding: 10px; /* Padding inside the container */
-    background-color: #f9f9f9; /* Light background color */
-    border-radius: 8px; /* Rounded corners for the container */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+/* Styling for the react-select dropdown */
+.plan-selector-dropdown {
+  margin-bottom: 10px;
 }
 
-/* Styling for insurance plan buttons */
-.insurance-plan-list button {
-    margin: 5px; /* Space between buttons */
-    padding: 10px 15px; /* Padding inside buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    border: none; /* No border for buttons */
-    border-radius: 4px; /* Rounded corners for buttons */
-    transition: all 0.3s ease; /* Smooth transition for color and background */
-    color: white; /* Text color for buttons */
-    font-size: 1em; /* Font size for buttons */
-    font-weight: 500; /* Font weight for buttons */
-    flex: 1 1 auto; /* Buttons will grow and shrink as needed */
-    background-color: #007bff; /* Background color for buttons */
+/* Style overrides for react-select */
+.plan-selector-dropdown .Select__control {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #000000; /* Change background color to black */
+  color: white; /* Set text color to white for better contrast */
 }
 
-/* Hover effect for buttons */
-.insurance-plan-list button:hover {
-    background-color: #0056b3; /* Slightly darker shade on hover */
-    color: #fff; /* Text color on hover */
+.plan-selector-dropdown .Select__menu {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #000000; /* Change background color to black */
+  color: white; /* Option text color */
 }
 
-/* Loading text style */
-.insurance-plan-list p {
-    color: #666; /* Color for the loading text */
-    text-align: center; /* Center the loading text */
+.plan-selector-dropdown .Select__menu .Select__option {
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: #000000; /* Change background color to black */
+  color: white; /* Option text color */
+}
+
+.plan-selector-dropdown .Select__menu .Select__option:hover {
+  background-color: #45a049; /* Hover background color */
+  color: white; /* Hover option text color */
 }

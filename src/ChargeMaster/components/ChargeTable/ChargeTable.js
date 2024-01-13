@@ -8,7 +8,7 @@ import ColumnSelector from "./ColumnSelector/ColumnSelector";
 function ChargeTable({ systemId, locationId, setSelectedRows }) {
   const [charges, setCharges] = useState([]);
   const [isLoading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(""); // Reverted to a string
+  const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedColumns, setSelectedColumns] = useState([
     "ServiceDescription",
@@ -16,7 +16,7 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
     "GrossCharge",
     "DiscountedCashPrice",
   ]);
-  const rowsPerPage = 5;
+  const rowsPerPage = 10;
 
   useEffect(() => {
     if (systemId && locationId) {
@@ -72,7 +72,7 @@ function ChargeTable({ systemId, locationId, setSelectedRows }) {
       <Header
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-        selectedColumns={selectedColumns} // This prop is not used in Header now
+        selectedColumns={selectedColumns}
       />
       <ColumnSelector
         systemId={systemId}

@@ -43,8 +43,18 @@ function LocationList({ selectedSystem, onLocationSelect }) {
             <button
               key={location.LocationID}
               onClick={() => handleLocationClick(location.LocationID)}
+              className={
+                selectedLocationId === location.LocationID ? "selected" : ""
+              } /* Apply "selected" class conditionally */
               style={{
-                backgroundColor: selectedSystem.color || "#defaultColor",
+                backgroundColor:
+                  selectedLocationId === location.LocationID
+                    ? "#45a049" /* Background color for selected button */
+                    : selectedSystem.color || "#defaultColor",
+                border:
+                  selectedLocationId === location.LocationID
+                    ? "2px solid #45a049" /* Add border to selected button */
+                    : "none" /* Remove border from unselected buttons */,
               }}
             >
               {location.LocationName}

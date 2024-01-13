@@ -1,88 +1,77 @@
 /* LoginComponent.css */
 
-/* Main container for LoginComponent */
-.login-container {
-  background-color: #f4f4f4;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: center;
+/* Apply styles for the entire page */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
 }
 
-/* Styling for form elements */
-.login-container form {
+/* Style the login container */
+.login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-/* Styling for form groups (input + label) */
-.login-container .form-group {
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+/* Style form elements */
+.form-group {
   margin-bottom: 20px;
 }
 
-/* Styling for labels */
-.login-container label {
-  font-weight: bold;
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-/* Styling for input fields */
-.login-container input {
+.form-group input[type="email"],
+.form-group input[type="password"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 5px;
-  outline: none;
-}
-
-/* Styling for the Login button */
-.login-container button {
-  background-color: #007bff;
-  color: #fff;
   border: none;
-  border-radius: 4px;
-  padding: 12px 20px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
+  border-radius: 5px;
 }
 
-/* Hover effect for the Login button */
-.login-container button:hover {
+/* Style the login button */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
   background-color: #0056b3;
 }
 
-/* Styling for the paragraph below the Login button */
-.login-container p {
-  margin-top: 20px;
-}
-
-/* Styling for the "Don't have an account?" link */
-.login-container a {
-  color: #007bff;
+/* Style the "Sign Up" link */
+p a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
   text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-/* Hover effect for the link */
-.login-container a:hover {
-  text-decoration: underline;
-}
-
-/* Styling for the Welcome message */
-.login-container h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* Styling for the Logout button */
-.login-container button.logout-button {
-  background-color: #ff6b6b;
-}
-
-/* Hover effect for the Logout button */
-.login-container button.logout-button:hover {
-  background-color: #e64343;
+p a:hover {
+  background-color: #0056b3;
 }

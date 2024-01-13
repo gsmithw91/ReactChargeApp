@@ -1,0 +1,30 @@
+/* App.css */
+
+/* Global styles for the entire app */
+
+/* Apply some basic styling to the entire page */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the header */
+.App-header {
+  background-color: #02ab9d; /* Header background color */
+  color: white; /* Header text color */
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style the main content */
+main {
+  padding: 20px;
+}
+
+/* Style the main container */
+.App {
+  text-align: center;
+}

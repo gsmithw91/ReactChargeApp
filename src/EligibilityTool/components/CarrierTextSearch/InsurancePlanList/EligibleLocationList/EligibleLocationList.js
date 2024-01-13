@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import LocationCard from "./LocationCard/LocationCard"; // Adjust the import path as needed
-import "./EligibleLocationList.css"; // Ensure you have this CSS file for styling
+import LocationCard from "./LocationCard/LocationCard";
+import "./EligibleLocationList.css";
 
 function EligibleLocationList({ planId }) {
   const [locations, setLocations] = useState([]);

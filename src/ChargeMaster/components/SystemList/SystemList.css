@@ -1,41 +1,31 @@
-/* SystemList.css */
-
-.systems-list {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.systems-label {
-  margin-bottom: 10px;
-  color: #333;
-  font-size: 18px; /* Adjusted for consistency */
-}
-
+/* Style the system buttons */
 .systems-list button {
   margin: 5px;
   padding: 10px 15px;
   cursor: pointer;
-  border: 1px solid #ddd; /* Added for consistency */
+  border: none; /* Remove border */
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: #4caf50; /* Consistent with App header */
+  background-color: #4caf50;
   color: white;
-  font-size: 16px; /* Adjusted for consistency */
-  font-weight: normal; /* Adjusted for consistency */
-  flex: 1 1 auto;
-}
-
-.systems-list button:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
-  color: white;
-}
-
-.systems-list p {
-  color: #666;
+  font-size: 16px;
+  font-weight: normal;
+  width: calc(33.33% - 10px);
+  box-sizing: border-box;
   text-align: center;
+  opacity: 0.7; /* Initial opacity */
+}
+
+/* Style the selected system button */
+.systems-list button.selected {
+  background-color: #45a049;
+  opacity: 1; /* Fully opaque when selected */
+}
+
+/* Add a media query for smaller screens to make buttons full-width again */
+@media (max-width: 768px) {
+  .systems-list button {
+    width: 100%;
+    margin: 5px 0;
+  }
 }

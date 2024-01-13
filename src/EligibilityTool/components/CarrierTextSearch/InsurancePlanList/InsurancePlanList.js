@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Select from "react-select"; // Import react-select
+import Select from "react-select";
 import "./InsurancePlanList.css";
 import EligibleLocationList from "./EligibleLocationList/EligibleLocationList";
 
@@ -54,6 +54,25 @@ function InsurancePlanList({ carrierId }) {
         value={selectedPlans}
         onChange={handlePlanSelect}
         className="plan-selector-dropdown"
+        styles={{
+          container: (provided) => ({
+            ...provided,
+            width: "100%",
+          }),
+          control: (provided) => ({
+            ...provided,
+            border: "1px solid #ddd",
+            borderRadius: "4px",
+            backgroundColor: "#000000",
+            color: "white",
+          }),
+          option: (provided, state) => ({
+            ...provided,
+            backgroundColor: state.isSelected ? "#45a049" : "#000000",
+            color: state.isSelected ? "white" : "white",
+            cursor: "pointer",
+          }),
+        }}
       />
       {selectedPlans.map((plan) => (
         <div key={plan.value} className="plan-container">

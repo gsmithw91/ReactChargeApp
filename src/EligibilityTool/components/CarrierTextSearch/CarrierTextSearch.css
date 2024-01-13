@@ -3,7 +3,7 @@
 /* Main container for CarrierTextSearch */
 .carrier-text-search-container {
   padding: 20px;
-  background-color: #f9f9f9; /* Light gray background */
+  background-color: #3e3e3e; /* Updated to black background */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 20px; /* Spacing around the container */
@@ -30,7 +30,7 @@
 
 /* Styling for individual selected carrier items */
 .selected-carrier-item {
-  background-color: #e9e9e9; /* Slightly darker background for contrast */
+  background-color: #3e3e3e; /* Slightly darker background for contrast */
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 4px;
@@ -40,7 +40,7 @@
 /* Styling for the heading inside selected carriers */
 .selected-carriers h3 {
   margin-bottom: 10px;
-  color: #333;
+  color: #ffffff;
 }
 
 /* You can add more specific styling as needed for other elements */

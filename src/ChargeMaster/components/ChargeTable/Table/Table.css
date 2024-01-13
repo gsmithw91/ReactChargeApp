@@ -4,6 +4,11 @@
 .table-container {
   width: 100%;
   overflow-x: auto; /* Allows horizontal scrolling for wide tables */
+  margin: 20px; /* Add margin for consistency */
+  padding: 10px; /* Add padding for consistency */
+  background-color: #000000; /* Change background color to black */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Styling for the table */
@@ -14,7 +19,7 @@
 
 /* Table headers */
 .table-container th {
-  background-color: #4caf50; /* Consistent header color with App header */
+  background-color: #45a049; /* Consistent header color with App header */
   color: white;
   padding: 10px;
   text-align: left;
@@ -45,7 +50,7 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  background-color: #4caf50; /* Consistent button color with App header */
+  background-color: #45a049; /* Consistent button color with App header */
   color: white;
 }
 

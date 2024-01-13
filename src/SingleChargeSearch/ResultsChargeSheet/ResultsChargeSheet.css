@@ -1,13 +1,20 @@
+/* Updated styling for ResultsChargeSheet component */
+
 .results-charge-sheet {
   margin: 20px;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
+  border-radius: 8px; /* Adjusted border radius */
+  background-color: #3e3e3e; /* Light gray background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .results-charge-sheet h2 {
   text-align: center;
+  margin-top: 0; /* Remove top margin for h2 */
+  padding: 10px 0; /* Adjusted padding for h2 */
+  background-color: #5b5b5b; /* Background color for h2 */
+  color: white; /* Text color for h2 */
+  border-radius: 8px 8px 0 0; /* Rounded corners for top of the component */
 }
 
 .results-list {
@@ -16,6 +23,14 @@
 
 .result-item {
   padding: 10px;
-  margin-bottom: 5px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 10px; /* Increased margin-bottom for better spacing */
+  background-color: #656565; /* White background for each result item */
+  border-radius: 8px; /* Rounded corners for result items */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 1px solid #ddd; /* Consistent border styling */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.result-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
 }

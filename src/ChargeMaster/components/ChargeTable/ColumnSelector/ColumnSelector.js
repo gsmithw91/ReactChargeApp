@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Select from "react-select"; // Import react-select
+import Select from "react-select";
 import "./ColumnSelector.css";
 
 function ColumnSelector({ systemId, selectedColumns, setSelectedColumns }) {
@@ -22,16 +22,37 @@ function ColumnSelector({ systemId, selectedColumns, setSelectedColumns }) {
   }, [systemId]);
 
   const handleChange = (selectedOptions) => {
-    // Transform selected options back into an array of column names
     const selectedColumnNames = selectedOptions.map((option) => option.value);
     setSelectedColumns(selectedColumnNames);
   };
 
-  // Transform selectedColumns for react-select
   const selectedValues = selectedColumns.map((column) => ({
     value: column,
     label: column,
   }));
+
+  // Define custom styles for the Select component
+  const customStyles = {
+    container: (provided) => ({
+      ...provided,
+      width: "100%",
+    }),
+    control: (provided) => ({
+      ...provided,
+      border: "1px solid #ddd",
+      borderRadius: "4px",
+      backgroundColor: "#000000" /* Changed background color */,
+      color: "white" /* Set text color to white for better contrast */,
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isSelected
+        ? "#45a049"
+        : "#000000" /* Changed background color */,
+      color: state.isSelected ? "white" : "white" /* Option text color */,
+      cursor: "pointer",
+    }),
+  };
 
   return (
     <div className="column-selector">
@@ -41,7 +62,7 @@ function ColumnSelector({ systemId, selectedColumns, setSelectedColumns }) {
         options={availableColumns}
         value={selectedValues}
         onChange={handleChange}
-        className="column-selector-dropdown"
+        styles={customStyles} // Apply custom styles
       />
     </div>
   );

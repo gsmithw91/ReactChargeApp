@@ -1,11 +1,58 @@
-.column-selector button {
-  margin-right: 5px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  background-color: #f8f8f8;
+/* ColumnSelector.css */
+
+/* Style the container for the column selector */
+.column-selector {
+  margin: 20px;
+  padding: 10px;
+  background-color: #000000; /* Change background color to black */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.column-selector button.selected {
-  background-color: #007bff;
-  color: white;
+/* Style the dropdown selector */
+.column-selector .react-select__control {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #000000; /* Changed background color */
+  color: white; /* Set text color to white for better contrast */
+}
+
+/* Style the selected option */
+.column-selector .react-select__single-value {
+  color: white; /* Selected option text color */
+}
+
+/* Style the dropdown options */
+.column-selector .react-select__option {
+  cursor: pointer;
+  background-color: #000000; /* Changed background color */
+  color: white; /* Option text color */
+}
+
+/* Style the hovered option */
+.column-selector .react-select__option:hover {
+  background-color: #ddd; /* Hover effect background color */
+}
+
+/* Style the border for the dropdown */
+.column-selector .react-select__control--is-focused {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Style the dropdown indicator */
+.column-selector .react-select__dropdown-indicator {
+  color: #45a049; /* Dropdown indicator color */
+}
+
+/* Style the dropdown indicator on hover */
+.column-selector .react-select__dropdown-indicator:hover {
+  color: #45a049; /* Hover effect color for the indicator */
+}
+
+/* Style the placeholder text */
+.column-selector .react-select__placeholder {
+  color: #666; /* Placeholder text color */
 }

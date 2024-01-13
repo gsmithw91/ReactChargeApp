@@ -35,11 +35,15 @@ function SystemList({ onSystemSelect }) {
         <button
           key={system.SystemID}
           onClick={() => handleSystemSelect(system.SystemID)}
+          className={
+            selectedSystem.id === system.SystemID ? "selected" : ""
+          } /* Apply "selected" class conditionally */
           style={{
-            backgroundColor:
+            backgroundColor: colorMapping[system.SystemID] || "#defaultColor",
+            border:
               selectedSystem.id === system.SystemID
-                ? selectedSystem.color
-                : colorMapping[system.SystemID] || "#defaultColor",
+                ? "2px solid #45a049"
+                : "none" /* Add border to selected button */,
           }}
         >
           {system.SystemName}
