@@ -1,3 +1,4 @@
+// src/index.js
 import React from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -14,7 +15,9 @@ import EligibilityTool from "./EligibilityTool/App";
 import SingleChargeSearch from "./SingleChargeSearch/App";
 import LoginComponent from "./LoginComponents/LoginComponent";
 import SignUpComponent from "./SignUpComponent/SignUpComponent";
+import LandingPage from "./LandingPage/LandingPage"; // Import your landing page component
 import { UserProvider } from "./contexts/UserContext";
+import PrivateRoute from "./PrivateRoute/PrivateRoute"; // Import the PrivateRoute component
 
 function AppWithTransition() {
   let location = useLocation();
@@ -25,15 +28,33 @@ function AppWithTransition() {
       <TransitionGroup>
         <CSSTransition key={location.key} timeout={300} classNames="fade">
           <Routes location={location}>
-            <Route path="/chargemaster" element={<ChargeMaster />} />
-            <Route path="/eligibilitytool" element={<EligibilityTool />} />
+            <Route path="/" element={<LandingPage />} />
+            <Route
+              path="/chargemaster"
+              element={
+                <PrivateRoute>
+                  <ChargeMaster />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/eligibilitytool"
+              element={
+                <PrivateRoute>
+                  <EligibilityTool />
+                </PrivateRoute>
+              }
+            />
             <Route
               path="/singlechargesearch"
-              element={<SingleChargeSearch />}
+              element={
+                <PrivateRoute>
+                  <SingleChargeSearch />
+                </PrivateRoute>
+              }
             />
             <Route path="/login" element={<LoginComponent />} />
             <Route path="/signup" element={<SignUpComponent />} />
-            <Route path="/" element={<EligibilityTool />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>

@@ -1,0 +1,27 @@
+/* LoggedStat.css */
+
+.login-status-container {
+  padding: 10px 20px; /* Padding around the container */
+  background-color: #f8f9fa; /* Light background color */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Spacing from the top */
+}
+
+.login-status-container p {
+  margin: 0; /* Remove default margin */
+  font-size: 18px; /* Font size for the text */
+  color: #2c3e50; /* Dark text color for contrast */
+  font-weight: bold; /* Bold text for emphasis */
+}
+
+/* Styling for when user is logged in */
+.login-status-container .user-greeting {
+  color: #28a745; /* Green color for greeting message */
+}
+
+/* Styling for when user is not logged in */
+.login-status-container .login-prompt {
+  color: #dc3545; /* Red color for login prompt */
+}

@@ -1,6 +1,7 @@
 // LoggedStat.js
 import React from "react";
 import { useUser } from "../../contexts/UserContext"; // Verify the correct path
+import "./LoggedStat.css";
 
 const LoggedStat = () => {
   const { user } = useUser();
