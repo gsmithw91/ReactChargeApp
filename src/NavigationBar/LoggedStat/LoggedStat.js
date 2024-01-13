@@ -1,24 +1,17 @@
-import React, { useState } from "react";
-import "./LoggedStat.css";
+// LoggedStat.js
+import React from "react";
+import { useUser } from "../../contexts/UserContext"; // Verify the correct path
 
 const LoggedStat = () => {
-  // Initialize the user's name as an empty string
-  const [userName, setUserName] = useState("");
+  const { user } = useUser();
 
-  // Function to update the user's name when logged in
-  const handleLogin = (name) => {
-    setUserName(name);
-  };
-
-  // Function to handle logout (clear the user's name)
-  const handleLogout = () => {
-    setUserName("");
-  };
+  // Debugging: Log the user object
+  console.log("User object from context:", user);
 
   return (
     <div className="login-status-container">
-      {userName ? (
-        <p>Welcome, {userName}!</p>
+      {user ? (
+        <p>Welcome, {user.FirstName}!</p> // Use 'FirstName' as per your data structure
       ) : (
         <p>Please log in to see your name.</p>
       )}

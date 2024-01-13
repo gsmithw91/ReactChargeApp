@@ -14,12 +14,13 @@ import EligibilityTool from "./EligibilityTool/App";
 import SingleChargeSearch from "./SingleChargeSearch/App";
 import LoginComponent from "./LoginComponents/LoginComponent";
 import SignUpComponent from "./SignUpComponent/SignUpComponent";
+import { UserProvider } from "./contexts/UserContext";
 
 function AppWithTransition() {
   let location = useLocation();
 
   return (
-    <>
+    <UserProvider>
       <NavBar />
       <TransitionGroup>
         <CSSTransition key={location.key} timeout={300} classNames="fade">
@@ -36,7 +37,7 @@ function AppWithTransition() {
           </Routes>
         </CSSTransition>
       </TransitionGroup>
-    </>
+    </UserProvider>
   );
 }
 
@@ -50,5 +51,3 @@ root.render(
     </Router>
   </React.StrictMode>
 );
-
-// You can add other configuration or setup here

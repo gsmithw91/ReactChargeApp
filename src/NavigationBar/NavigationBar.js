@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import "./NavigationBar.css";
 import LoggedStat from "./LoggedStat/LoggedStat";
 
+import { useUser } from "../contexts/UserContext"; // Adjust the import path as needed
 const NavBar = () => {
+  const { user, logout } = useUser(); // Use the user and logout from UserContext
+
   return (
     <nav>
       <ul>
@@ -26,14 +28,22 @@ const NavBar = () => {
             ChargeMasterGPT
           </a>
         </li>
+        {user ? (
+          <li>
+            <button onClick={logout}>Logout</button>
+          </li>
+        ) : (
+          <>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/signup">Sign Up</Link>
+            </li>
+          </>
+        )}
         <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/signup">Sign Up</Link>
-        </li>
-        <li>
-          <LoggedStat /> {/* Include the LoginStatus component */}
+          <LoggedStat />
         </li>
       </ul>
     </nav>
