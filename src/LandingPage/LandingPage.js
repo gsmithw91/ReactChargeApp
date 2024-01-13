@@ -11,11 +11,6 @@ const LandingPage = () => {
       <Link to="/login">Login</Link>
       <br />
       <Link to="/signup">Sign Up</Link>
-
-      <ThreeDImport>
-        <Microchip className="microchip" />
-        {/* You can add more 3D components as needed */}
-      </ThreeDImport>
     </div>
   );
 };
