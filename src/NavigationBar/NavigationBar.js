@@ -3,26 +3,36 @@ import { NavLink } from "react-router-dom";
 import "./NavigationBar.css"; // Ensure this import path is correct
 import LoggedStat from "./LoggedStat/LoggedStat"; // Adjust the path as needed
 import { useUser } from "../contexts/UserContext";
+
 const NavBar = () => {
   const { user, logout } = useUser(); // Use the user and logout from UserContext
 
   return (
     <nav>
       <ul>
-        {user && (
+        {user ? (
           <>
             <li>
-              <NavLink to="/chargemaster" activeClassName="active">
+              <NavLink
+                to="/chargemaster"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 ChargeMaster
               </NavLink>
             </li>
             <li>
-              <NavLink to="/eligibilitytool" activeClassName="active">
+              <NavLink
+                to="/eligibilitytool"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 EligibilityTool
               </NavLink>
             </li>
             <li>
-              <NavLink to="/singlechargesearch" activeClassName="active">
+              <NavLink
+                to="/singlechargesearch"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 Single Charge Search
               </NavLink>
             </li>
@@ -44,16 +54,21 @@ const NavBar = () => {
               <LoggedStat />
             </li>
           </>
-        )}
-        {!user && (
+        ) : (
           <>
             <li>
-              <NavLink to="/login" activeClassName="active">
+              <NavLink
+                to="/login"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 Login
               </NavLink>
             </li>
             <li>
-              <NavLink to="/signup" activeClassName="active">
+              <NavLink
+                to="/signup"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 Sign Up
               </NavLink>
             </li>

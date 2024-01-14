@@ -1,5 +1,7 @@
+// ThreeDImport.js
 import React from "react";
 import { Canvas } from "@react-three/fiber";
+import "./ThreeDImport.css"; // Assuming you have specific styles
 
 const ThreeDImport = ({ children }) => {
   return (
@@ -7,7 +9,7 @@ const ThreeDImport = ({ children }) => {
       <Canvas>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
-        {children} {/* Render any child components */}
+        {children}
       </Canvas>
     </div>
   );
