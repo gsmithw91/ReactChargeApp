@@ -60,6 +60,7 @@ function CarrierTextSearch() {
 
   return (
     <div className="carrier-text-search-container">
+      <div className="insurance-eligibility-header">Insurance Eligibility</div>
       <Select
         isMulti
         name="carriers"

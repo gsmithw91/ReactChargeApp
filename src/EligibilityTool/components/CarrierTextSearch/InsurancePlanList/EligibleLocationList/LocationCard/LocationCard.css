@@ -1,86 +1,67 @@
-/* Styling for each location card */
+/* LocationCard.css */
+
+/* Styling for the card container */
 .location-card {
-  cursor: pointer; /* Pointer cursor on hover over the card */
-  transition: all 0.3s ease; /* Smooth transition for hover effect */
-  border-radius: 5px; /* Rounded corners for the card */
+  background-color: #2c2c2c; /* Dark background for contrast */
+  color: white; /* White text color for readability */
+  border-radius: 4px; /* Rounded corners */
+  padding: 15px; /* Padding inside the card */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
-/* Header section of the card */
+/* Hover effect for the card */
+.location-card:hover {
+  transform: translateY(-5px); /* Slight lift */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Increased shadow */
+}
+
+/* Styling for the card title */
 .location-card h4 {
-  margin: 0; /* Remove default margin */
-  padding: 8px 10px; /* Padding for the header */
-  background-color: #007bff; /* Background color for header */
-  color: white; /* Text color for header */
-  border-radius: 5px 5px 0 0; /* Rounded corners for top of the card */
+  margin: 0 0 10px 0; /* Spacing */
+  font-size: 1.2em; /* Slightly larger font size */
 }
 
-/* Button to show/hide details */
+/* Styling for the details section */
+.location-details {
+  margin-top: 10px; /* Space above the details */
+  font-size: 0.9em; /* Smaller font size for details */
+  line-height: 1.4; /* Line height for readability */
+}
+
+/* Styling for buttons */
 .location-card button {
-  margin: 5px; /* Space around the button */
-  padding: 6px 12px; /* Padding inside the button */
-  background-color: #28a745; /* Background color for button */
-  color: white; /* Text color for button */
-  border: none; /* No border */
-  border-radius: 4px; /* Rounded corners for the button */
-  cursor: pointer; /* Pointer cursor on hover */
+  background-color: #1abc9c; /* Primary button color */
+  color: white; /* White text color */
+  border: none;
+  border-radius: 3px;
+  padding: 8px 12px;
+  margin-right: 10px; /* Space between buttons */
+  cursor: pointer;
+  transition: background-color 0.2s ease; /* Transition for interactive feedback */
 }
 
+/* Hover effect for buttons */
 .location-card button:hover {
-  background-color: #218838; /* Slightly darker shade on hover */
+  background-color: #17a589; /* Darker shade on hover */
 }
 
-/* Location details section */
-.location-card .location-details {
-  padding: 10px; /* Padding inside details section */
-  background-color: #3e3e3e; /* Light background for details section */
+/* Specific styles for different buttons */
+.website-button {
+  /* Custom styles for website button if needed */
 }
 
-/* Styling for individual detail paragraphs */
-.location-card .location-details p {
-  margin: 5px 0; /* Margin around each paragraph */
+.pricing-info-button {
+  /* Custom styles for pricing info button if needed */
 }
 
-/* Styles for the website button */
-.location-card .website-button {
-  background-color: #1e90ff; /* Distinct blue color for the website button */
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  margin: 5px;
-  border-radius: 4px;
-  cursor: pointer;
+.google-maps-button {
+  /* Custom styles for Google Maps button if needed */
 }
 
-.location-card .website-button:hover {
-  background-color: #187bcd; /* Darker shade on hover */
-}
-
-/* Styles for the pricing info button */
-.location-card .pricing-info-button {
-  background-color: #ff8c00; /* Orange color for the pricing info button */
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  margin: 5px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.location-card .pricing-info-button:hover {
-  background-color: #e07a00; /* Darker shade on hover */
-}
-
-/* Styles for the Google Maps button */
-.location-card .google-maps-button {
-  background-color: #32cd32; /* Green color for the Google Maps button */
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  margin: 5px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.location-card .google-maps-button:hover {
-  background-color: #28a745; /* Darker shade on hover */
+/* Add responsive design adjustments if necessary */
+@media screen and (max-width: 768px) {
+  .location-card {
+    /* Adjustments for smaller screens */
+  }
 }

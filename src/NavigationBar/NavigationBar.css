@@ -1,14 +1,14 @@
-/* Updated styling for NavigationBar component */
+/* NavigationBar.css */
 
 nav {
-  background-color: #333; /* Updated background color to a softer shade */
+  background-color: #333; /* Dark background color */
   color: white;
   padding: 10px 20px;
   text-align: center;
-  position: fixed; /* Fix the navigation bar to the top */
+  position: fixed; /* Fixed position at the top */
   top: 0;
-  width: 100%; /* Ensure the nav bar extends full width */
-  z-index: 1000; /* Ensure the nav bar stays on top of other content */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensures the nav bar stays on top */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
@@ -36,12 +36,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #1abc9c;
+  color: #1abc9c; /* Highlight color on hover */
   background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
 }
 
 .logout-button {
-  background-color: #555; /* Updated button color for a more muted look */
+  background-color: #555; /* Muted button color */
   color: white;
   border: none;
   border-radius: 4px;
@@ -53,18 +53,18 @@ nav ul li a:hover {
 }
 
 .logout-button:hover {
-  background-color: #777; /* Darken button on hover for interactive feedback */
+  background-color: #777; /* Darken button on hover */
 }
 
 @media screen and (max-width: 768px) {
   nav ul {
     flex-direction: column;
-    padding-top: 60px; /* Add space for the fixed nav bar */
+    padding-top: 60px; /* Space for fixed nav bar */
   }
 
   nav ul li {
     display: block;
-    width: 100%; /* Full width links for easier touch */
+    width: 100%; /* Full width for easier access */
     text-align: left;
   }
 

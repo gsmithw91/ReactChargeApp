@@ -2,61 +2,82 @@
 
 .container {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: row; /* Align ChargeSheet and SummaryBox side by side */
+  align-items: flex-start; /* Align items at the start */
   gap: 20px; /* Space between ChargeSheet and SummaryBox */
+  padding: 20px;
 }
 
 .charge-sheet {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-grow: 2; /* Allocate more space to ChargeSheet */
+  background-color: #2c2c2c;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  font-family: "Arial", sans-serif; /* Change font to Arial or any friendly font */
+  color: #ffffff;
+}
+
+.charge-sheet h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
 .charge-item-wrapper {
-  width: 70%;
+  list-style: none;
   margin-bottom: 10px;
 }
 
-/* Full width for unordered list with no default list style */
-.charge-sheet ul {
-  width: 100%;
-  padding: 0;
-  list-style: none;
-}
-
-/* Styling for individual charge items */
 .charge-item {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-  font-family: "Arial", sans-serif;
-  background-color: #3e3e3e; /* Change font to Arial or any friendly font */
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #3e3e3e;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
-.charge-item p {
-  margin: 0;
-  line-height: 1.5;
-  text-align: left;
+.charge-details {
+  flex-grow: 1;
 }
 
-/* Color box for system indication */
+.charge-details p {
+  margin: 5px 0;
+}
+
 .system-color-box {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  position: absolute;
-  right: 15px;
-  top: 15px;
+  margin-left: 10px;
 }
 
-/* Full-width header with centered text */
-.charge-sheet > h2 {
-  width: 100%;
-  text-align: center;
+.summary-box {
+  flex-grow: 1; /* Allocate space to SummaryBox */
+  background-color: #f1f1f1; /* Light background */
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add more styling as needed */
+}
+
+.charge-sheet-actions {
+  /* Styles for the ChargeSheetActions component */
+  padding: 10px;
+  margin-top: 20px;
+  /* Add more styling as needed */
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+  }
+
+  .charge-sheet,
+  .summary-box {
+    width: 100%; /* Full width for smaller screens */
+    max-width: 100%; /* Override max-width */
+    padding: 10px;
+  }
 }

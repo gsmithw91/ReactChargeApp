@@ -1,20 +1,44 @@
-/* HeaderContainer.css */
+/* Header.css */
 
-/* Header container */
-.header-container {
-  margin: 20px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+.header {
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
-/* Search input */
-.header-container .charge-table-search {
-  width: 100%; /* Full width of its container */
-  padding: 10px; /* Comfortable padding for typing */
-  margin-bottom: 10px; /* Space below the search box */
-  font-size: 16px; /* Consistent font size with other inputs */
-  border: 1px solid #ddd; /* Softer border color for consistency */
-  border-radius: 4px; /* Rounded corners for modern look */
+.header h2 {
+  margin-bottom: 10px; /* Spacing below the title */
+  color: #333;
+  font-size: 1.5em;
+}
+
+.header .charge-table-search {
+  width: 100%; /* Full width */
+  padding: 15px 20px; /* Increased padding for a larger box */
+  font-size: 1.1em; /* Slightly larger font size */
+  margin-bottom: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #495057;
+}
+.header .charge-table-search:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack elements in a column on smaller screens */
+    align-items: stretch; /* Stretch items to full width */
+  }
+
+  .header .charge-table-search {
+    width: auto; /* Adjust width for smaller screens */
+    margin-top: 10px; /* Space above the search input on smaller screens */
+  }
 }

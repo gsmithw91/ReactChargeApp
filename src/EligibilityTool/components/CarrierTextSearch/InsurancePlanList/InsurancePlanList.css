@@ -9,25 +9,34 @@
 .plan-selector-dropdown .Select__control {
   border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: #000000; /* Change background color to black */
+  background-color: #2c2c2c; /* Lighter gray to match the application theme */
   color: white; /* Set text color to white for better contrast */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Consistent shadow for depth */
 }
 
 .plan-selector-dropdown .Select__menu {
   border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: #000000; /* Change background color to black */
+  background-color: #333; /* Dark background for dropdown options */
   color: white; /* Option text color */
 }
 
 .plan-selector-dropdown .Select__menu .Select__option {
   cursor: pointer;
   padding: 8px 12px;
-  background-color: #000000; /* Change background color to black */
+  background-color: #333; /* Consistent with dropdown menu background */
   color: white; /* Option text color */
 }
 
-.plan-selector-dropdown .Select__menu .Select__option:hover {
-  background-color: #45a049; /* Hover background color */
-  color: white; /* Hover option text color */
+.plan-selector-dropdown .Select__menu .Select__option:hover,
+.plan-selector-dropdown .Select__menu .Select__option--is-focused {
+  background-color: #45a049; /* Hover and focus background color */
+  color: white; /* Hover and focus text color */
 }
+
+.plan-selector-dropdown .Select__menu .Select__option--is-selected {
+  background-color: #45a049; /* Selected option background color */
+  color: white; /* Selected option text color */
+}
+
+/* Additional styling can go here */

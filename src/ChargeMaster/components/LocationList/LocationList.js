@@ -33,7 +33,7 @@ function LocationList({ selectedSystem, onLocationSelect }) {
 
   return (
     <div className="location-container">
-      {" "}
+      <h2 className="systems-label">Select a Location</h2>{" "}
       {/* This div wraps the entire content */}
       <div className="locations-list">
         {isLoading ? (

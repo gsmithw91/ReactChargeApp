@@ -1,4 +1,4 @@
-/* App.css */
+/* EligibilityTool.css */
 
 /* Global styles for the entire app */
 
@@ -7,6 +7,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  color: #ffffff; /* Ensuring text color consistency */
 }
 
 /* Style the header */
@@ -22,9 +23,10 @@ body {
 /* Style the main content */
 main {
   padding: 20px;
+  text-align: left; /* Align text to the left */
 }
 
 /* Style the main container */
 .App {
-  text-align: center;
+  text-align: left; /* Align text to the left */
 }

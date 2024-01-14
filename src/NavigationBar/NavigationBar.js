@@ -1,10 +1,8 @@
-// NavBar.js
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavigationBar.css"; // Ensure this import path is correct
-import LoggedStat from "./LoggedStat/LoggedStat";
-import { useUser } from "../contexts/UserContext"; // Adjust the import path as needed
-
+import LoggedStat from "./LoggedStat/LoggedStat"; // Adjust the path as needed
+import { useUser } from "../contexts/UserContext";
 const NavBar = () => {
   const { user, logout } = useUser(); // Use the user and logout from UserContext
 
@@ -14,13 +12,19 @@ const NavBar = () => {
         {user && (
           <>
             <li>
-              <Link to="/chargemaster">ChargeMaster</Link>
+              <NavLink to="/chargemaster" activeClassName="active">
+                ChargeMaster
+              </NavLink>
             </li>
             <li>
-              <Link to="/eligibilitytool">EligibilityTool</Link>
+              <NavLink to="/eligibilitytool" activeClassName="active">
+                EligibilityTool
+              </NavLink>
             </li>
             <li>
-              <Link to="/singlechargesearch">Single Charge Search</Link>
+              <NavLink to="/singlechargesearch" activeClassName="active">
+                Single Charge Search
+              </NavLink>
             </li>
             <li>
               <a
@@ -44,10 +48,14 @@ const NavBar = () => {
         {!user && (
           <>
             <li>
-              <Link to="/login">Login</Link>
+              <NavLink to="/login" activeClassName="active">
+                Login
+              </NavLink>
             </li>
             <li>
-              <Link to="/signup">Sign Up</Link>
+              <NavLink to="/signup" activeClassName="active">
+                Sign Up
+              </NavLink>
             </li>
           </>
         )}

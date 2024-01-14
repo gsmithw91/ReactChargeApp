@@ -1,34 +1,42 @@
-/* LocationDetails.css */
-
 .location-details-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 20px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.location-details,
-.location-map {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
+.details-content {
+  background-color: #727272; /* Lighter background for the details */
+  padding: 15px;
   border-radius: 4px;
-  background-color: white;
-  margin-right: 10px;
-  text-align: center; /* Center the paragraphs */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.location-map {
-  height: 300px;
-  background-color: #ddd;
-  margin-right: 0;
+.location-details-container h2 {
+  margin-bottom: 15px;
 }
 
-/* Background color for location-details */
-.location-details {
-  background-color: #e0e0e0; /* Add your desired background color */
+.location-details-container p {
+  font-size: 1em;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+/* .location-details-container a {
+  color: #1abc9c;
+  text-decoration: none;
+} */
+
+.location-details-container a:hover {
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+@media screen and (max-width: 768px) {
+  .location-details-container {
+    padding: 10px;
+  }
+  .details-content {
+    padding: 10px;
+  }
 }

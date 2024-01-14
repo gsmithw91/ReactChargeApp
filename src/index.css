@@ -1,22 +1,57 @@
-body {
+/* index.css */
+
+/* Reset margin and padding */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* Set a basic font */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4; /* Light gray background */
 }
 
+/* Add some basic styles to headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+}
+
+/* Style for main links */
+a {
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Style for containers */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* Add some padding to the entire application to prevent overlap with the navigation bar */
+.app-container {
+  padding-top: 60px; /* Height of the navigation bar */
+}
+
+/* Transition styles */
 .fade-enter {
   opacity: 0;
+  z-index: 1;
 }
 
-.fade-enter-active {
+.fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 300ms ease-in;
 }
@@ -25,7 +60,7 @@ code {
   opacity: 1;
 }
 
-.fade-exit-active {
+.fade-exit.fade-exit-active {
   opacity: 0;
   transition: opacity 300ms ease-in;
 }

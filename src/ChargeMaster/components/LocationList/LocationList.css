@@ -1,52 +1,61 @@
-/* Style the locations list container */
-.locations-list {
+/* LocationList.css */
+
+/* Styling for the location list container */
+.location-container {
   display: flex;
-  flex-wrap: wrap;
-  margin: 20px;
-  padding: 10px;
-  background-color: #000000;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: "Arial", sans-serif; /* Change font to Arial or any friendly font */
+  flex-direction: column;
+  align-items: center; /* Center alignment for the list */
+  gap: 20px; /* Spacing between list items */
+  padding: 20px;
+  background-color: #3e3e3e; /* Light background for contrast */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* Style the location buttons */
+/* Styling for the list of locations */
+.locations-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spacing between location buttons */
+}
+
+/* Styling for each location button */
 .locations-list button {
-  margin: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: #4caf50; /* Consistent with SystemList */
-  color: white;
-  font-size: 16px; /* Adjusted for consistency */
-  font-weight: normal; /* Adjusted for consistency */
-  font-family: "Arial", sans-serif; /* Change font to Arial or any friendly font */
-  width: calc(
-    33.33% - 10px
-  ); /* Adjust the width to fit 3 buttons in a row with spacing */
-  box-sizing: border-box; /* Include padding and border in width calculation */
-  text-align: center; /* Center the text horizontally */
+  background-color: #e0e0e0; /* Default background color */
+  color: #ffffff; /* Text color */
+  border: 1px solid #ccc; /* Border for buttons */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 15px; /* Padding inside buttons */
+  cursor: pointer; /* Cursor style */
+  transition: background-color 0.3s, border 0.3s; /* Smooth transition for interaction */
+  text-align: left; /* Align text to the left */
 }
 
-/* Style the location buttons on hover */
+/* Hover effect for buttons */
 .locations-list button:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
-  color: white;
+  background-color: #d4d4d4; /* Slightly darker on hover */
 }
 
-/* Style location description text */
-.locations-list p {
-  color: #666;
-  text-align: center;
-  font-family: "Arial", sans-serif; /* Change font to Arial or any friendly font */
+/* Style for the selected location button */
+.selected {
+  background-color: #45a049; /* Green background for selected button */
+  color: white; /* White text for contrast */
+  border: 2px solid #45a049; /* Solid border for selected button */
 }
 
-/* Add a media query for smaller screens to make buttons full-width again */
-@media (max-width: 768px) {
+/* Loading and empty state messages */
+.location-container p {
+  color: #ffffff; /* Text color for messages */
+  padding: 10px; /* Padding for messages */
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+  .location-container {
+    padding: 10px; /* Reduced padding on smaller screens */
+  }
   .locations-list button {
-    width: 100%;
-    margin: 5px 0; /* Adjust margin for spacing between buttons */
+    width: 100%; /* Full-width buttons for easier selection */
   }
 }

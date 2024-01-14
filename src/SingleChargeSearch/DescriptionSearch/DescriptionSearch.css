@@ -8,7 +8,7 @@
   justify-content: center; /* Center contents vertically */
   margin: 20px;
   padding: 20px;
-  background-color: #6a6a6a; /* Consistent gray background with BillingSearch */
+  background-color: #2b2b2b; /* Consistent gray background with BillingSearch */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -20,8 +20,8 @@
   margin-bottom: 10px;
   border: 1px solid #ced4da; /* Consistent border color with BillingSearch */
   border-radius: 4px;
-  background-color: #fff; /* White background for the input */
-  color: #495057; /* Consistent text color with BillingSearch */
+  background-color: #000000; /* White background for the input */
+  color: #ffffff; /* Consistent text color with BillingSearch */
 }
 
 .description-search-input:focus {
