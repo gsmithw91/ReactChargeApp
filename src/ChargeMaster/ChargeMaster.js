@@ -3,9 +3,9 @@ import SystemList from "./components/SystemList/SystemList";
 import LocationList from "./components/LocationList/LocationList";
 import ChargeTable from "./components/ChargeTable/ChargeTable";
 import ChargeSheet from "./components/ChargeSheet/ChargeSheet";
-import "./App.css";
+import "./ChargeMaster.css";
 
-function App() {
+function ChargeMaster() {
   const [selectedSystem, setSelectedSystem] = useState({
     id: null,
     color: null,
@@ -42,4 +42,4 @@ function App() {
   );
 }
 
-export default App;
+export default ChargeMaster;

@@ -1,9 +1,9 @@
 // App.js
 import React from "react";
 import CarrierTextSearch from "./components/CarrierTextSearch/CarrierTextSearch";
-import "./App.css";
+import "./EligibilityTool.css";
 
-function App() {
+function EligibilityTool() {
   return (
     <div className="App">
       <header className="App-header">Eligibility Tool</header>
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default EligibilityTool;

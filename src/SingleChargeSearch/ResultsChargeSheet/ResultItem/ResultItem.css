@@ -1,0 +1,26 @@
+/* ResultItem.css */
+
+.result-item {
+  background-color: #656565; /* Light gray to match the theme */
+  color: #ffffff; /* White text for contrast */
+  border-radius: 8px; /* Consistency with other rounded elements */
+  padding: 10px; /* Adequate spacing */
+  margin-bottom: 10px; /* Space between each result item */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 1px solid #ddd; /* Light border for definition */
+  text-align: left; /* Aligning text to the left */
+}
+
+.result-item div {
+  margin-bottom: 8px; /* Spacing between each detail */
+}
+
+.result-item strong {
+  color: #1abc9c; /* A contrasting color for key names */
+  margin-right: 5px; /* Spacing after key names */
+}
+
+.result-item:hover {
+  background-color: #5b5b5b; /* Slightly darker on hover for interaction feedback */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}

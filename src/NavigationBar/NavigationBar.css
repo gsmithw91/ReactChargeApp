@@ -1,26 +1,28 @@
 /* Updated styling for NavigationBar component */
 
 nav {
-  background-color: #02ab9d; /* Updated background color */
+  background-color: #333; /* Updated background color to a softer shade */
   color: white;
   padding: 10px 20px;
   text-align: center;
+  position: fixed; /* Fix the navigation bar to the top */
+  top: 0;
+  width: 100%; /* Ensure the nav bar extends full width */
+  z-index: 1000; /* Ensure the nav bar stays on top of other content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
-nav ul li:last-child {
-  margin-right: 0;
+  margin: 0 10px;
 }
 
 nav ul li a {
@@ -28,23 +30,18 @@ nav ul li a {
   color: white;
   font-size: 16px;
   font-weight: bold;
+  padding: 8px 16px;
+  display: inline-block;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
   color: #1abc9c;
-}
-
-/* Mobile responsiveness */
-@media screen and (max-width: 600px) {
-  nav ul li {
-    display: block;
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
 }
 
 .logout-button {
-  background-color: #e74c3c;
+  background-color: #555; /* Updated button color for a more muted look */
   color: white;
   border: none;
   border-radius: 4px;
@@ -56,5 +53,23 @@ nav ul li a:hover {
 }
 
 .logout-button:hover {
-  background-color: #c0392b;
+  background-color: #777; /* Darken button on hover for interactive feedback */
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    padding-top: 60px; /* Add space for the fixed nav bar */
+  }
+
+  nav ul li {
+    display: block;
+    width: 100%; /* Full width links for easier touch */
+    text-align: left;
+  }
+
+  nav ul li a {
+    padding: 12px 20px; /* Larger touch area */
+    display: block;
+  }
 }

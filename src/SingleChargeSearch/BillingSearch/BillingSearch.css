@@ -1,6 +1,9 @@
 /* BillingSearch.css */
 
 /* Container for the billing search */
+/* BillingSearch.css */
+
+/* Container for the billing search */
 .billing-search-container {
   display: flex;
   flex-direction: column;
@@ -8,7 +11,7 @@
   justify-content: center; /* Center contents vertically */
   margin: 20px;
   padding: 20px;
-  background-color: #3e3e3e; /* Light gray background */
+  background-color: #6a6a6a; /* Light gray background, not white */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -18,35 +21,60 @@
   width: 100%; /* Full width */
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #ced4da; /* Soften the border color */
   border-radius: 4px;
-  background-color: #3e3e3e;
-  color: #ddd;
+  background-color: #fff; /* White background for the input */
+  color: #495057; /* Dark gray color for the text */
+}
+
+.billing-search-input:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 /* Search button */
 .billing-search-button {
-  background-color: #007bff;
+  background-color: #007bff; /* Primary color */
   color: white;
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.2s; /* Smooth transition for hover effect */
 }
 
 .billing-search-button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker shade on hover */
 }
 
-/* Loading message */
-.loading-message {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-/* Error message */
+/* Loading and error messages */
+.loading-message,
 .error-message {
   margin-top: 10px;
-  color: #ff0000;
-  font-weight: bold;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.loading-message {
+  color: #6c757d; /* Neutral color for loading message /
+font-weight: normal; / Avoid bold for a modern look */
+}
+
+.error-message {
+  color: #dc3545; /* Bootstrap's danger color for errors /
+font-weight: normal; / Consistent font weight with loading message */
+}
+
+/* Responsive Design Adjustments */
+@media screen and (max-width: 768px) {
+  .billing-search-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .billing-search-input,
+  .billing-search-button {
+    padding: 8px 15px;
+  }
 }

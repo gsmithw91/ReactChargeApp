@@ -10,9 +10,9 @@ import {
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "./index.css";
 import NavBar from "./NavigationBar/NavigationBar";
-import ChargeMaster from "./ChargeMaster/App";
-import EligibilityTool from "./EligibilityTool/App";
-import SingleChargeSearch from "./SingleChargeSearch/App";
+import ChargeMaster from "./ChargeMaster/ChargeMaster";
+import EligibilityTool from "./EligibilityTool/EligibilityTool";
+import SingleChargeSearch from "./SingleChargeSearch/SingleChargeSearch";
 import LoginComponent from "./LoginComponents/LoginComponent";
 import SignUpComponent from "./SignUpComponent/SignUpComponent";
 import LandingPage from "./LandingPage/LandingPage"; // Import your landing page component

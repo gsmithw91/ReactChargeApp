@@ -1,12 +1,14 @@
-/* Updated styles for consistency */
+/* DescriptionSearch.css */
 
 /* Container for the description search */
 .description-search-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Center contents horizontally */
+  justify-content: center; /* Center contents vertically */
+  margin: 20px;
   padding: 20px;
-  background-color: #3e3e3e; /* Light gray background */
+  background-color: #6a6a6a; /* Consistent gray background with BillingSearch */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -16,31 +18,56 @@
   width: 100%; /* Full width */
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #ced4da; /* Consistent border color with BillingSearch */
   border-radius: 4px;
-  background-color: #3e3e3e;
-  color: #ddd;
+  background-color: #fff; /* White background for the input */
+  color: #495057; /* Consistent text color with BillingSearch */
 }
 
+.description-search-input:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
 /* Search button for description search */
 .description-search-button {
-  padding: 10px 20px; /* Updated padding for consistency */
-  background-color: #007bff;
+  padding: 10px 20px; /* Consistent padding with BillingSearch */
+  background-color: #007bff; /* Primary color */
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0 2s; /* Smooth transition for hover effect */
 }
-
 .description-search-button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker shade on hover, consistent with BillingSearch */
 }
 
-/* Loading message and error message */
+/* Loading and error messages */
 .loading-message,
 .error-message {
   margin-top: 10px;
-  font-weight: bold;
-  color: #ff0000; /* Updated text color for error message */
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.loading-message {
+  color: #6c757d; /* Neutral color for loading message, removed bold for a modern look */
+}
+
+.error-message {
+  color: #dc3545; /* Bootstrap's danger color for errors, removed bold for consistency */
+}
+
+/* Responsive Design Adjustments, consistent with BillingSearch */
+@media screen and (max-width: 768px) {
+  .description-search-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .description-search-input,
+  .description-search-button {
+    padding: 8px 15px;
+  }
 }
