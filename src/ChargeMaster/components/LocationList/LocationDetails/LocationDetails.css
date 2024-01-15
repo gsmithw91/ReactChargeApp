@@ -1,9 +1,11 @@
-.location-details-container {
-  padding: 20px;
-  max-width: 500px;
-  margin: 0 auto;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.location-details-container a {
+  background-color: #007d73; /* Blue background color for the link */
+  color: #ffffff; /* White text color */
+  text-decoration: none; /* No underline by default */
+  padding: 8px 12px; /* Padding inside the box */
+  border-radius: 4px; /* Slightly rounded corners for the box */
+  display: inline-block; /* Allows padding and border-radius to apply correctly */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .details-content {
@@ -23,13 +25,9 @@
   margin-bottom: 10px;
 }
 
-/* .location-details-container a {
-  color: #1abc9c;
-  text-decoration: none;
-} */
-
 .location-details-container a:hover {
-  text-decoration: underline; /* Underline on hover for links */
+  text-decoration: underline;
+  background-color: #00c9b9;
 }
 
 @media screen and (max-width: 768px) {

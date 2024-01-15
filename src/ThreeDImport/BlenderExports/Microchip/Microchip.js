@@ -1,19 +1,65 @@
 // Microchip.js
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useLoader, useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import "./Microchip.css";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for React Router v6
 
 const Microchip = () => {
   const microchipRef = useRef();
-  const gltf = useLoader(GLTFLoader, "/BlenderExports/Microchip/Microchip.glb");
+  const [isDragging, setIsDragging] = useState(false);
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const gltf = useLoader(
+    GLTFLoader,
+    "static/BlenderExports/Microchip/Microchip.glb"
+  );
+  const navigate = useNavigate(); // useNavigate hook for navigation
 
-  // This rotation value will flip the microchip upside down.
+  // Mouse event handlers
+  const handleMouseDown = (event) => {
+    event.stopPropagation(); // Prevent click event when starting drag
+    setIsDragging(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (event) => {
+    if (isDragging) {
+      setRotation({
+        x: rotation.x + event.movementY * 0.005,
+        y: rotation.y + event.movementX * 0.005,
+      });
+    }
+  };
+
+  const handleClick = () => {
+    navigate("/login"); // Navigate to login using useNavigate
+  };
+
   useFrame(() => {
-    microchipRef.current.rotation.y += 0.01;
+    if (microchipRef.current) {
+      if (isDragging) {
+        microchipRef.current.rotation.x = rotation.x;
+        microchipRef.current.rotation.y = rotation.y;
+      } else {
+        microchipRef.current.rotation.y += 0.002; // Continuous rotation when not dragging
+      }
+    }
   });
 
-  return <primitive ref={microchipRef} object={gltf.scene} scale={[2, 2, 2]} />;
+  return (
+    <mesh
+      ref={microchipRef}
+      onClick={handleClick}
+      onPointerDown={handleMouseDown}
+      onPointerUp={handleMouseUp}
+      onPointerOut={handleMouseUp}
+      onPointerMove={handleMouseMove}
+    >
+      <primitive object={gltf.scene} scale={[2, 2, 2]} />
+    </mesh>
+  );
 };
 
 export default Microchip;

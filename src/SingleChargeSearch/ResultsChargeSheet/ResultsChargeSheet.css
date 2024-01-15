@@ -24,7 +24,7 @@
 .result-item {
   padding: 10px;
   margin-bottom: 10px; /* Increased margin-bottom for better spacing */
-  background-color: #656565; /* White background for each result item */
+  background-color: #3e3e3e; /* White background for each result item */
   border-radius: 8px; /* Rounded corners for result items */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   border: 1px solid #ddd; /* Consistent border styling */

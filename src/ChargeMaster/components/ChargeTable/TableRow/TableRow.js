@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./TableRow.css";
 function TableRow({
   charge,
   selectedColumns, // Use selectedColumns instead of initialColumns

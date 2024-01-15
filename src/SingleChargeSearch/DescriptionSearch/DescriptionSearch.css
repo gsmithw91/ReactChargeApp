@@ -32,7 +32,7 @@
 /* Search button for description search */
 .description-search-button {
   padding: 10px 20px; /* Consistent padding with BillingSearch */
-  background-color: #007bff; /* Primary color */
+  background-color: #00c9b882; /* Primary color */
   color: white;
   border: none;
   border-radius: 4px;
@@ -40,7 +40,7 @@
   transition: background-color 0 2s; /* Smooth transition for hover effect */
 }
 .description-search-button:hover {
-  background-color: #0056b3; /* Darker shade on hover, consistent with BillingSearch */
+  background-color: #00c9b9; /* Darker shade on hover, consistent with BillingSearch */
 }
 
 /* Loading and error messages */

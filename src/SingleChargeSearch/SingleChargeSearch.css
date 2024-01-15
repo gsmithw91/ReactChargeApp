@@ -36,10 +36,12 @@
 
 .tab-button {
   /* Style your buttons here */
+  background-color: #007d73;
 }
 
 .tab-button.active {
   /* Style for active state of the button */
+  background-color: #00c9b9;
 }
 
 /* Additional styles for other elements as needed */

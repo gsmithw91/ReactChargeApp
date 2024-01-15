@@ -1,28 +1,24 @@
 /* TableRow.css */
 
-/* Style for table cells */
-.table td {
-  padding: 10px; /* Padding for spacing */
-  border-bottom: 1px solid #ddd; /* Subtle border for each row */
-  text-align: left; /* Align cell text to the left */
+/* Styling for the button in the table row */
+tr td button {
+  background-color: #007d73; /* Button color */
+  color: white; /* Text color */
+  padding: 8px 12px; /* Padding inside button */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-/* Hover effect for table rows */
-.table tr:hover {
-  background-color: #f2f2f2; /* Light background on hover for interactivity */
+/* Hover effect for the button */
+tr td button:hover {
+  background-color: #00c9b9; /* Slightly lighter color on hover */
 }
 
-/* Styling for the action button in TableRow */
-.table button {
-  background-color: #4caf50; /* Green background for action buttons */
-  color: white; /* White text for contrast */
-  border: none;
-  border-radius: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-.table button:hover {
-  background-color: #45a049; /* Darker green on hover */
+/* Additional styles for table data cells */
+tr td {
+  /* Add any additional styles for the cells, like padding, text alignment, etc. */
+  padding: 8px; /* Example padding */
+  text-align: left; /* Align text to the left */
 }

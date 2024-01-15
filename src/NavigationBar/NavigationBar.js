@@ -1,14 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./NavigationBar.css"; // Ensure this import path is correct
-import LoggedStat from "./LoggedStat/LoggedStat"; // Adjust the path as needed
+import "./NavigationBar.css";
+import LoggedStat from "./LoggedStat/LoggedStat";
 import { useUser } from "../contexts/UserContext";
 
 const NavBar = () => {
-  const { user, logout } = useUser(); // Use the user and logout from UserContext
+  const { user, logout } = useUser();
 
   return (
     <nav>
+      <div className="logo-container">
+        <img src="/STSlogo.jpg" alt="STS Logo" className="navbar-logo" />
+      </div>
       <ul>
         {user ? (
           <>

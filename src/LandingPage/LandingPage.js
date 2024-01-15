@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ThreeDImport from "../ThreeDImport/ThreeDImport";
 import Microchip from "../ThreeDImport/BlenderExports/Microchip/Microchip";
+import Electrons from "../ThreeDImport/BlenderExports/Electrons/Electrons";
 import CameraController from "../ThreeDImport/CameraController/CameraController";
 import "./LandingPage.css";
 

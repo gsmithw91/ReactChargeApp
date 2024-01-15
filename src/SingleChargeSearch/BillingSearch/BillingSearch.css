@@ -35,7 +35,7 @@
 
 /* Search button */
 .billing-search-button {
-  background-color: #007bff; /* Primary color */
+  background-color: #007d73; /* Primary color */
   color: white;
   border: none;
   border-radius: 4px;
@@ -45,7 +45,7 @@
 }
 
 .billing-search-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #00c9b9; /* Darker shade on hover */
 }
 
 /* Loading and error messages */

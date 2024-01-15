@@ -1,26 +1,36 @@
 /* ResultItem.css */
+/* ResultItem.css */
 
+/* Styling for the container of each result item */
 .result-item {
-  background-color: #656565; /* Light gray to match the theme */
-  color: #ffffff; /* White text for contrast */
-  border-radius: 8px; /* Consistency with other rounded elements */
-  padding: 10px; /* Adequate spacing */
-  margin-bottom: 10px; /* Space between each result item */
+  background-color: #f2f2f2; /* Light background for contrast */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px; /* Padding around the content */
+  margin-bottom: 10px; /* Spacing between each item */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border: 1px solid #ddd; /* Light border for definition */
-  text-align: left; /* Aligning text to the left */
 }
 
+/* Styling for each key-value pair within the result item */
 .result-item div {
-  margin-bottom: 8px; /* Spacing between each detail */
+  margin-bottom: 8px;
+  background-color: #3e3e3e; /* Spacing between each key-value pair */
 }
 
+/* Styling for the key (label) in the key-value pair */
 .result-item strong {
-  color: #1abc9c; /* A contrasting color for key names */
-  margin-right: 5px; /* Spacing after key names */
+  color: #00c9b9; /* Green color for key labels, consistent with your theme */
+  margin-right: 5px; /* Spacing between key label and value */
 }
+
+/* You can add additional styling as needed */
 
 .result-item:hover {
   background-color: #5b5b5b; /* Slightly darker on hover for interaction feedback */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.location-name {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
 }

@@ -13,14 +13,14 @@
   padding: 10px 15px; /* Comfortable padding */
   border: none;
   border-radius: 4px; /* Rounded corners */
-  background-color: #4caf50; /* Consistent button color with App header */
+  background-color: #007d73; /* Consistent button color with App header */
   color: white;
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .charge-sheet-actions button:hover {
-  background-color: #45a049; /* Slightly darker green on hover */
+  background-color: #00c9b882; /* Slightly darker green on hover */
 }
 
 .charge-sheet-actions p {

@@ -1,24 +1,32 @@
 /* Table.css */
 
-/* Style for the table */
-.table {
+/* Styling for the table */
+table {
   width: 100%; /* Full width */
-  border-collapse: collapse; /* Collapse borders for a cleaner look */
-  background-color: #fff; /* White background for the table */
+  border-collapse: collapse; /* Removes the space between borders */
+  margin-top: 20px; /* Spacing above the table */
 }
 
-/* Style for table headers */
-.table th {
-  background-color: #333; /* Dark background for headers */
+/* Styling for table headers */
+table th {
+  background-color: #007d73; /* Button color for consistency */
   color: white; /* White text for contrast */
-  text-align: left; /* Align header text to the left */
-  padding: 10px; /* Padding for spacing */
+  padding: 10px; /* Padding inside header cells */
+  text-align: left; /* Align text to the left */
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-  .table {
-    display: block; /* Block display for better responsiveness */
-    overflow-x: auto; /* Scroll horizontally on smaller screens */
-  }
+/* Styling for table rows */
+table tr {
+  border-bottom: 1px solid #ccc; /* Subtle border for each row */
+}
+
+/* Styling for table data cells */
+table td {
+  padding: 10px; /* Padding inside data cells */
+  text-align: left; /* Align text to the left */
+}
+
+/* Hover effect for table rows */
+table tr:hover {
+  background-color: #00c9b882; /* Slightly lighter color on hover */
 }

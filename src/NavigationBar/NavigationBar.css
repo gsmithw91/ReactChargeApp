@@ -12,6 +12,21 @@ nav {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Logo container styles */
+.logo-container {
+  float: left;
+  height: 80px; /* Adjust to match the height of your nav items */
+  display: flex;
+  align-items: center; /* Centers the logo vertically */
+  margin-right: 20px; /* Space after logo before the nav items */
+}
+
+/* Logo image styles */
+.navbar-logo {
+  height: 100%; /* Logo will fill the height of its container */
+  border-radius: 10%; /* Circular edges; adjust as needed for different shapes */
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -57,19 +72,44 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  nav {
+    padding-top: 60px; /* Space for fixed nav bar */
+  }
+
+  .logo-container {
+    margin-bottom: 20px; /* Space after logo before the nav items stack */
+  }
+
   nav ul {
     flex-direction: column;
-    padding-top: 60px; /* Space for fixed nav bar */
   }
 
   nav ul li {
     display: block;
-    width: 100%; /* Full width for easier access */
-    text-align: left;
+    width: 100%; /* Full width for easier access /
+text-align: center; / Center align the links */
   }
 
   nav ul li a {
-    padding: 12px 20px; /* Larger touch area */
-    display: block;
+    padding: 12px 20px; /* Larger touch area /
+display: block; / Full width for touch targets */
+  }
+
+  .logout-button {
+    width: 100%; /* Full width for easier access on mobile */
+  }
+
+  .logo-container {
+    height: 40px;
+  }
+
+  .navbar-logo {
+    height: 100%; /* Logo will fill the height of its container */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo-container {
+    height: 30px;
   }
 }
