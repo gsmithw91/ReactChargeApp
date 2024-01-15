@@ -39,9 +39,9 @@
 
 /* Style for the selected location button */
 .selected {
-  background-color: #fc735b !important; /* Green background for selected button */
+  background-color: #ff9187 !important; /* Green background for selected button */
   color: white; /* White text for contrast */
-  border: 2px solid #fc735b !important; /* Solid border for selected button */
+  border: 2px solid #ff9187 !important; /* Solid border for selected button */
 }
 
 /* Loading and empty state messages */

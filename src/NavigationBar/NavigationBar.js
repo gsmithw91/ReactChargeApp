@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <nav>
       <div className="logo-container">
-        <img src="/STSlogo.jpg" alt="STS Logo" className="navbar-logo" />
+        <img src={`static/STSlogo.jpg`} alt="STS Logo" />
       </div>
       <ul>
         {user ? (

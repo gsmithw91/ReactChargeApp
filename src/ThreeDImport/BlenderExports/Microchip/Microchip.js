@@ -8,10 +8,7 @@ const Microchip = () => {
   const microchipRef = useRef();
   const [isDragging, setIsDragging] = useState(false);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const gltf = useLoader(
-    GLTFLoader,
-    "static/BlenderExports/Microchip/Microchip.glb"
-  );
+  const gltf = useLoader(GLTFLoader, "BlenderExports/Microchip/Microchip.glb");
   const navigate = useNavigate(); // useNavigate hook for navigation
 
   // Mouse event handlers

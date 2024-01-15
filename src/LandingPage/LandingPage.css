@@ -12,7 +12,6 @@
   max-width: 600px; /* Maximum width of the content */
   margin: 0 auto;
   padding: 20px;
-  background: #3e3e3e; /* Slightly transparent white background */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
@@ -27,7 +26,7 @@
   display: inline-block;
   margin: 10px;
   padding: 10px 20px;
-  background-color: #007bff; /* Blue background */
+  background-color: #007d73; /* Blue background */
   color: white;
   text-decoration: none;
   border-radius: 5px; /* Rounded edges for links */
@@ -35,7 +34,7 @@
 }
 
 .overlay-content a:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #00c9b9; /* Darker blue on hover */
 }
 
 /* Responsive Design */
@@ -47,4 +46,9 @@
   .overlay-content h1 {
     font-size: 2rem; /* Slightly smaller font size on smaller screens */
   }
+}
+.content-paragraph {
+  margin-bottom: 15px; /* Spacing between paragraphs */
+  color: #ffffff; /* Text color */
+  /* Add more styling as needed */
 }
