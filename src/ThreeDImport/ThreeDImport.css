@@ -1,5 +1,9 @@
-/* Add this style to make the canvas container take full width */
+/* Add this style to make the canvas container take full width and height of the viewport */
 .canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh; /* Optional: Set the height as needed */
+  height: 100vh; /* This will make it cover the entire viewport */
+  z-index: -1; /* Send the canvas to the background */
 }

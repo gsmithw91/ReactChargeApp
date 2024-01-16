@@ -74,12 +74,12 @@ nav ul li a:hover {
 
 @media screen and (max-width: 768px) {
   nav {
-    padding-top: 60px; /* Space for fixed nav bar */
+    padding-top: 10px; /* Adjusted padding for mobile */
   }
 
   .logo-container {
-    margin-bottom: 20px; /* Space after logo before the nav items stack */
-    height: 100%; /* Match the height of the navigation bar */
+    margin-bottom: 10px; /* Adjusted margin for mobile */
+    height: 60px; /* Match the height of the navigation bar */
   }
 
   nav ul {
@@ -93,7 +93,7 @@ nav ul li a:hover {
   }
 
   nav ul li a {
-    padding: 12px 20px; /* Larger touch area */
+    padding: 10px 20px; /* Adjusted padding for mobile */
     display: block; /* Full width for touch targets */
   }
 
@@ -102,11 +102,11 @@ nav ul li a:hover {
   }
 
   .logo-container {
-    height: 100%; /* Match the height of the navigation bar */
+    height: 60px; /* Match the height of the navigation bar */
   }
 
   .navbar-logo {
-    height: 100%; /* Logo will fill the height of its container */
+    height: 60px; /* Logo will maintain a fixed height */
   }
 }
 

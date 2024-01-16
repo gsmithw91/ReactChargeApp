@@ -10,3 +10,26 @@
 }
 
 /* Additional styles can be added here as needed */
+
+
+.landing-page a {
+  /* Interactive link/button styles */
+  background-color: #00E5EE; /* Cyan color from the logo */
+  color: black; /* Black text to match the logo's text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.landing-page a:hover {
+  background-color: darken(#00E5EE, 10%); /* Darker cyan on hover */
+}
+
+
+@media (max-width: 768px) {
+  .landing-page {
+    /* Adjust styles for mobile */
+  }
+}

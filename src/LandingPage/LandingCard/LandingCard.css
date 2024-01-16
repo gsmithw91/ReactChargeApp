@@ -1,3 +1,5 @@
+/* LandingCard.css */
+
 .landing-card {
   border: none;
   border-radius: 10px;
@@ -12,9 +14,11 @@
   font-size: 1.4em;
   color: #333333;
   margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Add a white glow effect */
 }
 
 .card-content {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Add a white glow effect */
   font-size: 1em;
   color: #555555;
   line-height: 1.6;
@@ -37,13 +41,15 @@
   padding: 30px;
   max-width: 600px;
   margin: 50px;
-  text-align: center;
+  text-align: left; /* Align the introduction card content to the left */
+  margin-left: auto; /* Add this line to align the card to the left */
+  margin-right: auto; /* Add this line to align the card to the left */
 }
-
 .introduction-card h1 {
   color: white;
   font-size: 1.5em;
   margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(15, 245, 103, 0.8); /* Add a white glow effect to h1 */
 }
 
 .introduction-card p {
@@ -69,5 +75,6 @@
     margin: 10px;
     padding: 15px;
     max-width: 100%;
+    text-align: center; /* Revert to center alignment on smaller screens */
   }
 }
