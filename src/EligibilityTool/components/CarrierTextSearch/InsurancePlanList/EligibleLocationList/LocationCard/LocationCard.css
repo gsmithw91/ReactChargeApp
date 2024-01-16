@@ -2,7 +2,7 @@
 
 /* Styling for the card container */
 .location-card {
-  background-color: #2c2c2c; /* Dark background for contrast */
+  background-color: #3e3e3e; /* Dark background for contrast */
   color: white; /* White text color for readability */
   border-radius: 4px; /* Rounded corners */
   padding: 15px; /* Padding inside the card */
@@ -17,16 +17,20 @@
 }
 
 /* Styling for the card title */
+
 .location-card h4 {
   margin: 0 0 10px 0; /* Spacing */
-  font-size: 1.2em; /* Slightly larger font size */
+  font-size: 1.2em;
+  background-color: #3e3e3e; /* Slightly larger font size */
 }
-
+.location-card p {
+  background-color: #3e3e3e; /* Slightly larger font size */
+}
 /* Styling for the details section */
 .location-details {
   margin-top: 10px; /* Space above the details */
   font-size: 0.9em; /* Smaller font size for details */
-  line-height: 1.4; /* Line height for readability */
+  line-height: 1.4;
 }
 
 /* Styling for buttons */
@@ -38,7 +42,7 @@
   padding: 8px 12px;
   margin-right: 10px; /* Space between buttons */
   cursor: pointer;
-  transition: background-color 0.2s ease; /* Transition for interactive feedback */
+  transition: background-color 0 ease; /* Transition for interactive feedback */
 }
 
 /* Hover effect for buttons */

@@ -1,54 +1,12 @@
 .landing-page {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh; /* Full height of the viewport */
-  background-color: #000000; /* Light grey background, you can change this */
-  padding: 20px;
-  text-align: center;
+  justify-content: center;
+  min-height: calc(
+    100vh - 60px
+  ); /* Adjusted to account for the height of the Navigation Bar */
+  padding-top: 60px; /* Height of the Navigation Bar */
 }
 
-.overlay-content {
-  max-width: 600px; /* Maximum width of the content */
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.overlay-content h1 {
-  font-size: 2.5rem; /* Large font size for the heading */
-  margin-bottom: 20px;
-  color: #ffffff; /* Dark grey color for the text */
-}
-
-.overlay-content a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #007d73; /* Blue background */
-  color: white;
-  text-decoration: none;
-  border-radius: 5px; /* Rounded edges for links */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.overlay-content a:hover {
-  background-color: #00c9b9; /* Darker blue on hover */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .overlay-content {
-    padding: 15px;
-  }
-
-  .overlay-content h1 {
-    font-size: 2rem; /* Slightly smaller font size on smaller screens */
-  }
-}
-.content-paragraph {
-  margin-bottom: 15px; /* Spacing between paragraphs */
-  color: #ffffff; /* Text color */
-  /* Add more styling as needed */
-}
+/* Additional styles can be added here as needed */

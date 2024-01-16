@@ -5,13 +5,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; /* Include padding and border in element's total width and height */
+  background-color: black; /* Light gray background */
 }
 
 /* Set a basic font */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4; /* Light gray background */
 }
 
 /* Add some basic styles to headings */

@@ -1,7 +1,6 @@
 /* NavigationBar.css */
 
 nav {
-  background-color: #333; /* Dark background color */
   color: white;
   padding: 10px 20px;
   text-align: center;
@@ -15,18 +14,20 @@ nav {
 /* Logo container styles */
 .logo-container {
   float: left;
-  height: 80px; /* Adjust to match the height of your nav items */
+  height: 60px; /* Adjust this height to fit the nav bar */
   display: flex;
   align-items: center; /* Centers the logo vertically */
-  margin-right: 20px; /* Space after logo before the nav items */
+  margin-right: 20px;
+  border-radius: 25%; /* Space after logo before the nav items */
 }
-
 /* Logo image styles */
 .navbar-logo {
-  height: 100%; /* Logo will fill the height of its container */
-  border-radius: 10%; /* Circular edges; adjust as needed for different shapes */
+  max-height: 100%; /* Ensures logo height does not exceed container height */
+  max-width: 100%; /* Optional: ensures logo width does not exceed container width */
+  height: auto; /* Maintain aspect ratio */
+  width: auto; /* Maintain aspect ratio */
+  border-radius: 25%; /* Circular edges; adjust as needed for different shapes */
 }
-
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -78,6 +79,7 @@ nav ul li a:hover {
 
   .logo-container {
     margin-bottom: 20px; /* Space after logo before the nav items stack */
+    height: 100%; /* Match the height of the navigation bar */
   }
 
   nav ul {
@@ -86,13 +88,13 @@ nav ul li a:hover {
 
   nav ul li {
     display: block;
-    width: 100%; /* Full width for easier access /
-text-align: center; / Center align the links */
+    width: 100%; /* Full width for easier access */
+    text-align: center; /* Center align the links */
   }
 
   nav ul li a {
-    padding: 12px 20px; /* Larger touch area /
-display: block; / Full width for touch targets */
+    padding: 12px 20px; /* Larger touch area */
+    display: block; /* Full width for touch targets */
   }
 
   .logout-button {
@@ -100,7 +102,7 @@ display: block; / Full width for touch targets */
   }
 
   .logo-container {
-    height: 40px;
+    height: 100%; /* Match the height of the navigation bar */
   }
 
   .navbar-logo {
@@ -110,6 +112,6 @@ display: block; / Full width for touch targets */
 
 @media screen and (max-width: 480px) {
   .logo-container {
-    height: 30px;
+    height: 30px; /* Adjust height for smaller screens */
   }
 }

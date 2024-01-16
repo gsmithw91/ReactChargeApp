@@ -13,7 +13,8 @@
   font-weight: bold; /* Bold font for the header */
   color: white; /* White text color */
   padding: 10px 0; /* Padding for aesthetic spacing */
-  margin-bottom: 1em; /* Space between the header and the select dropdown */
+  margin-bottom: 1em;
+  border-radius: 5%; /* Space between the header and the select dropdown */
 }
 
 .selected-carriers,
