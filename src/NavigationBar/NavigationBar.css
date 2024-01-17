@@ -5,6 +5,7 @@ nav {
   padding: 10px 20px;
   text-align: center;
   position: fixed; /* Fixed position at the top */
+  background-color: #000000;
   top: 0;
   width: 100%; /* Full width */
   z-index: 1000; /* Ensures the nav bar stays on top */

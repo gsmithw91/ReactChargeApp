@@ -8,6 +8,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 350px;
   text-align: center;
+  position: relative; /* Add this to ensure z-index works within the card */
+  z-index: 1; /* Set a higher z-index to appear on top of the canvas */
 }
 
 .card-title {
@@ -38,13 +40,15 @@
 }
 
 .introduction-card {
-  padding: 30px;
-  max-width: 600px;
-  margin: 50px;
-  text-align: left; /* Align the introduction card content to the left */
-  margin-left: auto; /* Add this line to align the card to the left */
-  margin-right: auto; /* Add this line to align the card to the left */
+  grid-column: 2;
+  grid-row: 1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  margin-top: 200px;
 }
+
 .introduction-card h1 {
   color: white;
   font-size: 1.5em;
@@ -65,16 +69,45 @@
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
-  .landing-card {
-    margin: 10px;
-    padding: 15px;
-    max-width: 100%;
+  .landing-page {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
   }
 
-  .introduction-card {
-    margin: 10px;
-    padding: 15px;
-    max-width: 100%;
-    text-align: center; /* Revert to center alignment on smaller screens */
+  .introduction-card,
+  .generic-card {
+    width: 100%; /* Each card takes the full width on smaller screens */
   }
+}
+/* Styles for the generic cards, similar to .landing-card */
+.generic-card {
+  grid-column: 1;
+  grid-row: 2;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px auto; /* Centered with margin at the top and bottom */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  text-align: center;
+  z-index: 1;
+}
+
+.generic-card h3 {
+  color: white;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(15, 245, 103, 0.8);
+  /* Styles for the title in generic card */
+}
+
+.generic-card p {
+  /* Styles for the content in generic card */
+  color: white;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* Spacing between introduction card and generic cards */
+.introduction-card + .generic-card {
+  margin-top: 10px; /* Adjust as needed for spacing */
 }
